@@ -1,0 +1,30 @@
+{
+	"sightcall": {
+		"ca": "certs/sightcall_authCA.crt",
+		"public_cert": "certs/sightcall_public_cert.pem",
+		"private_key": "certs/sightcall_private_key.pem",
+		"cert_pass": "XnyexbUF",
+		"client_id": "f3ae517ceb63539cda943cb18b7230",
+		"client_secret": "3a7e5b3f30e8be0fdebfe750456621",
+		"domain": "test"
+	},
+	"truevault": {
+		"vaultId": "de8e6615-c88e-4abc-a9d7-8103d919b1b3",
+		"kioskGroupId": "b48ef2c8-e7a8-4fd2-9996-263839e1091f",
+		"dentistGroupId": "127e445c-dc21-41b4-82fc-b4b96ebfe475",
+		"taGroupId": "10ac2a44-abe9-4812-b39f-f2960efced84",
+		"maGroupId": "9aee6233-87e7-4089-aa84-074ea09810c0",
+		"adminKey": "b0feee85-a14e-44cb-8646-349cef325082"
+	},
+	"sfax": {
+		"username": "DIN_API",
+		"apiKey": "55EC3AB6D00B436D9D4A3945721DDF23",
+		"encryptionKey": "zyVN5KPt^Hy#^fVeYTJDNaq3ti^gq4m*",
+		"initVector": "x49e*wJVXr8BrALE"
+	},
+	"public": {
+		"sightcall": {
+			"appid": "6xjg7qx65zz0"
+		}
+	}
+}

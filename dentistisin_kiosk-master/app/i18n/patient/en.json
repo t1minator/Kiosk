@@ -1,0 +1,195 @@
+{
+	"PATIENT": {
+		"HEADER": {
+			"TITLE": "Patient Information",
+			"SUBTEXT": "All fields are required unless otherwise stated"
+		},
+		"NAME": {
+			"LABEL": "Name",
+			"FIRST": {
+				"PLACEHOLDER": "First",
+				"ERRORS": {
+					"HEADER": "Invalid first name",
+					"REQUIRED": "A first name is required but nothing was entered",
+					"MAXLENGTH": "A first name is limited to 100 characters"
+				}
+			},
+			"MIDDLE": {
+				"PLACEHOLDER": "Middle (optional)",
+				"ERRORS": {
+					"HEADER": "Invalid middle name",
+					"MAXLENGTH": "A middle name is limited to 100 characters"
+				}
+			},
+			"LAST": {
+				"PLACEHOLDER": "Last",
+				"ERRORS": {
+					"HEADER": "Invalid last name",
+					"REQUIRED": "A last name is required but nothing was entered",
+					"MAXLENGTH": "A last name is limited to 100 characters"
+				}
+			},
+			"PREFERRED": {
+				"PLACEHOLDER": "Preferred (optional)",
+				"ERRORS": {
+					"HEADER": "Invalid preferred name",
+					"MAXLENGTH": "A preferred name is limited to 100 characters"
+				}
+			}
+		},
+		"ADDRESS": {
+			"LABEL": "Address",
+			"ONE": {
+				"PLACEHOLDER": "Address Line 1",
+				"ERRORS": {
+					"HEADER": "Invalid address line ",
+					"REQUIRED": "Address line 1 is required",
+					"MAXLENGTH": "Address line 1 is limited to 100 characters"
+				}
+			},
+			"TWO": {
+				"PLACEHOLDER": "Address Line 2 (optional)",
+				"ERRORS": {
+					"HEADER": "Invalid address line 2",
+					"MAXLENGTH": "Address lin 2 is limited to 100 characters"
+				}
+			},
+			"CITY": {
+				"PLACEHOLDER": "City",
+				"ERRORS": {
+					"HEADER": "Invalid city",
+					"REQUIRED": "A city is required",
+					"MAXLENGTH": "A city is limited to 100 characters"
+				}
+			},
+			"STATE": {
+				"PLACEHOLDER": "State",
+				"OPTIONS":  {
+					"AL": "Alabama",
+					"AK": "Alaska",
+					"AZ": "Arizona",
+					"AR": "Arkansas",
+					"CA": "California",
+					"CO": "Colorado",
+					"CT": "Connecticut",
+					"DC": "D.C.",
+					"DE": "Delaware",
+					"FL": "Florida",
+					"GA": "Georgia",
+					"HI": "Hawaii",
+					"ID": "Idaho",
+					"IL": "Illinois",
+					"IN": "Indiana",
+					"IA": "Iowa",
+					"KS": "Kansas",
+					"KY": "Kentucky",
+					"LA": "Louisiana",
+					"ME": "Maine",
+					"MD": "Maryland",
+					"MA": "Massachusetts",
+					"MI": "Michigan",
+					"MN": "Minnesota",
+					"MS": "Mississippi",
+					"MO": "Missouri",
+					"MT": "Montana",
+					"NE": "Nebraska",
+					"NV": "Nevada",
+					"NH": "New Hampshire",
+					"NJ": "New Jersey",
+					"NM": "New Mexico",
+					"NY": "New York",
+					"NC": "North Carolina",
+					"ND": "North Dakota",
+					"OH": "Ohio",
+					"OK": "Oklahoma",
+					"OR": "Oregon",
+					"PA": "Pennsylvania",
+					"RI": "Rhode Island",
+					"SC": "South Carolina",
+					"SD": "South Dakota",
+					"TN": "Tennessee",
+					"TX": "Texas",
+					"UT": "Utah",
+					"VT": "Vermont",
+					"VA": "Virginia",
+					"WA": "Washington",
+					"WV": "West Virginia",
+					"WI": "Wisconsin",
+					"WY": "Wyoming"
+				},
+				"ERRORS": {
+					"HEADER": "Invalid state",
+					"REQUIRED": "A state is required"
+				}
+			},
+			"ZIP": {
+				"PLACEHOLDER": "Zip",
+				"ERRORS": {
+					"HEADER": "Invalid zip code",
+					"REQUIRED": "A zip code is required",
+					"PATTERN": "A zip code can only contain numbers of the form NNNNN"
+				}
+			}
+		},
+		"DOB": {
+			"LABEL": "Date of Birth",
+			"DOB": {
+				"PLACEHOLDER": "MM/DD/YYYY",
+				"ERRORS": {
+					"HEADER": "Invalid date",
+					"REQUIRED": "Date of birth is required",
+					"DATE": "Invalid date format",
+					"PATTERN": "Invalid date format"
+				}
+			}
+		},
+		"SEX": {
+			"LABEL": "Sex",
+			"SEX": {
+				"PLACEHOLDER": "Sex",
+				"OPTIONS": {
+					"M": "Male",
+					"F": "Female"
+				},
+				"ERRORS": {
+					"HEADER": "Invalid sex",
+					"REQUIRED": "You must specify your sex"
+				}
+			}
+		},
+		"CONTACT": {
+			"LABEL": "Contact Information",
+			"EMAIL": {
+				"PLACEHOLDER": "E-mail (optional)",
+				"ERRORS": {
+					"HEADER": "Invalid e-mail address",
+					"EMAIL": "This is not a valid e-mail address",
+					"MAXLENGTH": "An e-mail should be less than 100 characters"
+				}
+			},
+			"PHONE": {
+				"PLACEHOLDER": "Phone (optional)",
+				"ERRORS": {
+					"HEADER": "Invalid phone number",
+					"MAXLENGTH": "A phone number should be less than 25 characters",
+					"MINLENGTH": "Please include your area code"
+				}
+			}
+		},
+		"INSURANCE": {
+			"LABEL": "Pick One:",
+			"INSURANCE": {
+				"PLACEHOLDER": "Payment Method",
+				"OPTIONS": {
+					"Insurance": "Dental Insurance",
+					"Medicaid": "Medicaid",
+					"Self": "Self Pay"
+				},
+				"ERRORS": {
+					"HEADER": "Invalid payment option",
+					"REQUIRED": "You must specify a payment option"
+				}
+			}
+		}
+	}
+}

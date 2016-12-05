@@ -1,0 +1,19 @@
+<div class="field" ng-class="((dinForm[dinOptions.name].$dirty || dinForm.$submitted) && dinForm[dinOptions.name].$invalid) ? 'error' : ''">
+	<div class="ui selection select" tabindex="{{ dinOptions.index }}">
+		<select ng-model="dinModel" name="{{ dinOptions.name }}" ng-trim="{{ dinOptions.trim }}" ng-required="{{ dinOptions.required }}">
+			<option value="">State</option>
+			<option ng-repeat="option in data.states" ng-value="{{option.code}}">{{option.name}}</option>
+		</select>
+		
+		<i class="icon"
+		   ng-show="dinForm[dinOptions.name].$dirty || dinForm.$submitted"
+		   ng-class="dinForm[dinOptions.name].$invalid ? 'red warning circle' : 
+		            ((dinOptions.required || dinForm[dinOptions.name].$dirty || dinForm.$submitted) ? 'green checkmark circle' : '')"></i>
+		<div class="default text" translate>{{ dinOptions.transRoot + '.PLACEHOLDER' }}</div>
+		<div class="menu">
+			<div class="item" ng-repeat="option in dinOptions.options" data-value="{{ option.value }}" data-text="{{ option.text | translate }}">
+				{{ option.text | translate }}
+			</div>
+		</div>
+	</div>
+</div>

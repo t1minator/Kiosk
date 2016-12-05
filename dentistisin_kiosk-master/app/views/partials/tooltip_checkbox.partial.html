@@ -1,0 +1,7 @@
+<div class="ui checkbox" ng-class="{toggle: !dinOptions.radio, radio: dinOptions.radio }">
+	<input type="checkbox"
+	       id="{{ dinOptions.name }}"
+	       name="{{ dinOptions.name }}"
+	       ng-model="dinModel" />
+	<label for="{{ dinOptions.name }}" translate>{{ dinOptions.transRoot + '.LABEL' }}</label>
+</div>

@@ -1,0 +1,22 @@
+<template name="enrollUsername">
+	<div class="ka-top ui center aligned three column stackable page grid">
+		<div class="eight wide column">
+			<div class="ui large fluid {{#if error}} error {{/if}} {{#if showResult}} success {{/if}} form segment">
+				<h2 class="ui center aligned dividing header">
+					Set Your Username
+				</h2>
+				<div class="ui info message">
+					<ul class="ui list">
+						<li class="correct-left">A username must be at least 6 characters.</li>
+						<li class="correct-left">A username can't be more than 20 characters.</li>
+						<li class="correct-left">A username can contain the characters a-z, A-Z, 0-9, and _</li>
+					</ul>
+				</div>
+				{{#autoForm schema="Users.setUsernameSchema" id="setUsername" template="semanticUI" errorsInLabels=true resetOnSuccess=true}}
+					{{> afQuickField name="username"}}
+					<button type="submit" class="ui small green right floated labeled button">Set</button>
+				{{/autoForm}}
+			</div>
+		</div>
+	</div>
+</template>

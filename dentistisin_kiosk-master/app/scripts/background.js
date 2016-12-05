@@ -1,0 +1,1 @@
+"use strict";chrome.app.runtime.onLaunched.addListener(function(e){chrome.power.requestKeepAwake("system"),chrome.app.window.onClosed.addListener(function(){chrome.power.releaseKeepAwake()}),chrome.app.window.create("../index.html",{id:"DIN.KA"})});

@@ -1,0 +1,101 @@
+{
+  "dependencies": {
+    "jsonwebtoken": {
+      "version": "http://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-5.0.0.tgz",
+      "dependencies": {
+        "jws": {
+          "version": "http://registry.npmjs.org/jws/-/jws-3.0.0.tgz",
+          "dependencies": {
+            "jwa": {
+              "version": "http://registry.npmjs.org/jwa/-/jwa-1.0.0.tgz",
+              "dependencies": {
+                "base64url": {
+                  "version": "http://registry.npmjs.org/base64url/-/base64url-0.0.6.tgz"
+                },
+                "buffer-equal-constant-time": {
+                  "version": "http://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz"
+                }
+              }
+            },
+            "base64url": {
+              "version": "http://registry.npmjs.org/base64url/-/base64url-1.0.4.tgz",
+              "dependencies": {
+                "concat-stream": {
+                  "version": "http://registry.npmjs.org/concat-stream/-/concat-stream-1.4.8.tgz",
+                  "dependencies": {
+                    "inherits": {
+                      "version": "http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
+                    },
+                    "typedarray": {
+                      "version": "http://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
+                    },
+                    "readable-stream": {
+                      "version": "http://registry.npmjs.org/readable-stream/-/readable-stream-1.1.13.tgz",
+                      "dependencies": {
+                        "core-util-is": {
+                          "version": "http://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz"
+                        },
+                        "isarray": {
+                          "version": "http://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz"
+                        },
+                        "string_decoder": {
+                          "version": "http://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz"
+                        }
+                      }
+                    }
+                  }
+                },
+                "meow": {
+                  "version": "http://registry.npmjs.org/meow/-/meow-2.0.0.tgz",
+                  "dependencies": {
+                    "camelcase-keys": {
+                      "version": "http://registry.npmjs.org/camelcase-keys/-/camelcase-keys-1.0.0.tgz",
+                      "dependencies": {
+                        "camelcase": {
+                          "version": "http://registry.npmjs.org/camelcase/-/camelcase-1.0.2.tgz"
+                        },
+                        "map-obj": {
+                          "version": "http://registry.npmjs.org/map-obj/-/map-obj-1.0.0.tgz"
+                        }
+                      }
+                    },
+                    "indent-string": {
+                      "version": "http://registry.npmjs.org/indent-string/-/indent-string-1.2.1.tgz",
+                      "dependencies": {
+                        "get-stdin": {
+                          "version": "http://registry.npmjs.org/get-stdin/-/get-stdin-4.0.1.tgz"
+                        },
+                        "repeating": {
+                          "version": "http://registry.npmjs.org/repeating/-/repeating-1.1.2.tgz",
+                          "dependencies": {
+                            "is-finite": {
+                              "version": "http://registry.npmjs.org/is-finite/-/is-finite-1.0.0.tgz"
+                            },
+                            "meow": {
+                              "version": "http://registry.npmjs.org/meow/-/meow-3.1.0.tgz",
+                              "dependencies": {
+                                "object-assign": {
+                                  "version": "http://registry.npmjs.org/object-assign/-/object-assign-2.0.0.tgz"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "minimist": {
+                      "version": "http://registry.npmjs.org/minimist/-/minimist-1.1.1.tgz"
+                    },
+                    "object-assign": {
+                      "version": "http://registry.npmjs.org/object-assign/-/object-assign-1.0.0.tgz"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

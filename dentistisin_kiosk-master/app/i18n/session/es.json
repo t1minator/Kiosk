@@ -1,0 +1,9 @@
+{
+	"STEPS": {
+		"PATIENT": "Información para el paciente",
+		"MEDICAL": "Información médica",
+		"DENTAL": "Queja denta",
+		"VOIP": "Video conferencia",
+		"SURVEY": "Encuesta"
+	}
+}

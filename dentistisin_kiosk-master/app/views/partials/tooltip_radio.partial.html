@@ -1,0 +1,20 @@
+<div class="grouped fields" ng-class="dinForm.$submitted && !dinModel ? 'error' : ''">
+	<!-- ((dinForm[dinOptions.name].$dirty || dinForm.$submitted) && !dinForm[dinOptions.name]) -->
+	<!-- <fieldset class="grouped fields" ng-class="((dinForm[dinOptions.name].$dirty || dinForm.$submitted) && dinForm[dinOptions.name].$invalid) ? 'error' : ''"> -->
+		<legend>
+			{{ dinOptions.transRoot + '.LABEL' | translate}}
+			<i class="icon"
+			   ng-show="dinModel || dinForm.$submitted"
+			   ng-class="!dinModel && dinForm.$submitted ? 'red warning circle' :
+			             (dinModel ? 'green checkmark circle' : '')"></i>
+		</legend>
+		<div class="field" ng-repeat="option in dinOptions.options">
+			<div class="ui radio checkbox">
+				<input id="{{ dinOptions.name + option}}" type="radio" ng-model="$parent.dinModel" ng-required="!dinModel" name="{{ dinOptions.name }}" value="{{ option }}" />
+				<label for="{{ dinOptions.name + option}}"> 
+				 	{{ dinOptions.transRoot + '.OPTIONS.' + option | translate }}
+				</label>
+			</div>
+		</div>
+	<!-- </fieldset> -->
+</div>

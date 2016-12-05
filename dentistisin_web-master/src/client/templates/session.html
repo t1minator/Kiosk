@@ -1,0 +1,383 @@
+<template name="session">
+	<div class="ui page grid">
+		<h1 class="ui header">Patient Report</h1>
+		<div class="eight wide column">
+			<div class="ui attached icon message">
+				<i class="wait icon"></i>
+				<div class="content">
+					<div class="header">
+						Session Timeline
+					</div>
+				</div>
+			</div>
+			<div class="ui attached segment">
+				{{> session_timeline }}
+			</div>
+		</div>
+		<div class="eight wide column">
+			{{#if this.session.form}}
+				<div class="ui attached icon message">
+					<i class="file text outline icon"></i>
+					<div class="content">
+						<div class="header">
+							Patient Form
+						</div>
+					</div>
+				</div>
+				<div class="ui attached segment">
+					{{> patient_info this.session }}
+				</div>
+			{{/if}}
+			{{#if this.session.dentistNotes}}
+				<div class="ui attached icon message">
+					<i class="treatment icon"></i>
+					<div class="content">
+						<div class="header">
+							Dentist Notes
+						</div>
+					</div>
+				</div>
+				<div class="ui attached segment">
+					{{> dentist_notes this.session }}
+				</div>
+			{{/if}}
+			{{#if this.session.survey}}
+				{{#if this.session.survey.skipped}}
+					<div class="ui attached icon message">
+						<i class="share icon"></i>
+						<div class="content">
+							<div class="header">
+								Survey Skipped
+							</div>
+						</div>
+					</div>
+				{{else}}
+					<div class="ui attached icon message">
+						<i class="browser icon"></i>
+						<div class="content">
+							<div class="header">
+								Survey
+							</div>
+						</div>
+					</div>
+					<div class="ui attached segment">
+						{{> survey this.session.survey.form }}
+					</div>
+				{{/if}}
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="session_timeline">
+	<div class="ui feed">
+		{{#each timeline this.session}}
+			{{> Template.dynamic template=template }}
+		{{/each}}
+	</div>
+</template>
+
+<template name="_created">
+	<div class="event">
+		<div class="label">
+			<i class="file outline icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient created a new session at <a href="{{pathFor route='location.show' locationId=this.location.id}}">{{this.location.name}}</a>.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_form">
+	<div class="event">
+		<div class="label">
+			<i class="green file text outline icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient completed form.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_voip">
+	{{> Template.dynamic template=template }}
+</template>
+
+<template name="_voip_ready">
+	<div class="event">
+		<div class="label">
+			<i class="call icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient ready for video call.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_voip_queued">
+	<div class="event">
+		<div class="label">
+			<i class="call icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient placed into the video call queue.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_voip_assigned">
+	<div class="event">
+		<div class="label">
+			<i class="call icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient assigned to <a href="{{pathFor route='user.show' userId=dentist.id}}">{{dentist.username}}</a>.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_voip_done">
+	<div class="event">
+		<div class="label">
+			<i class="green call icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Video call ended.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_notes">
+	<div class="event">
+		<div class="label">
+			<i class="green treatment icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				<a href="{{pathFor 'user.show' userId=this.dentist.id}}">{{this.dentist.username}}</a> submitted their evaluation.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_fax">
+	{{> Template.dynamic template=template }}
+</template>
+
+<template name="_fax_ready">
+	<div class="event">
+		<div class="label">
+			<i class="fax icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient report is ready to fax.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_fax_locked">
+	<div class="event">
+		<div class="label">
+			<i class="fax icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient report fax is being created.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_fax_sent">
+	<div class="event">
+		<div class="label">
+			<i class="fax icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient report fax has been sent.<!-- QueueId: {{SendFaxQueueId}}. -->
+			</div>
+			<div class="extra text">QueueId: {{SendFaxQueueId}}</div>
+		</div>
+	</div>
+</template>
+
+<template name="_fax_failed">
+	<div class="event">
+		<div class="label">
+			<i class="red fax icon"></i>
+		</div>
+		<div class="content">
+			<div class="Date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient report faxing has failed.
+			</div>
+			<div class="extra text">{{reason}}</div>
+		</div>
+	</div>
+</template>
+
+<template name="_fax_delivered">
+	<div class="event">
+		<div class="label">
+			<i class="green fax icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Patient report fax has been delivered.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_survey">
+	{{> Template.dynamic template=template }}
+</template>
+
+<template name="_survey_skipped">
+	<div class="event">
+		<div class="label">
+			<i class="share icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Survey skipped.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_survey_completed">
+	<div class="event">
+		<div class="label">
+			<i class="green browser icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Survey completed.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_complete">
+	{{> Template.dynamic template=template }}
+</template>
+
+<template name="_complete_finished">
+	<div class="event">
+		<div class="label">
+			<i class="green checkmark icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Session finished.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_complete_inactive">
+	<div class="event">
+		<div class="label">
+			<i class="yellow minus icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Session ended due to inactivity.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_complete_timeout">
+	<div class="event">
+		<div class="label">
+			<i class="red remove icon"></i>
+		</div>
+		<div class="content">
+			<div class="date">{{timestamp at}}</div>
+			<div class="summary">
+				Server ended session, the session was considered too old to be viable.
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="dentist_notes">
+	<div class="ui horizontal divider">Name</div>
+	<a href="{{pathFor route='user.show' userId=this.dentist.id}}">{{this.dentist.username}}</a>
+	{{#with dentistNotes}}
+		<div class="ui horizontal divider">Clinical Impressions</div>
+		{{clinicalImpression}}
+		<div class="ui horizontal divider">Recommendations</div>
+		{{recommendation}}
+		<div class="ui horizontal divider">Recommended Prescriptions</div>
+		{{recommendedPrescriptions}}
+	{{/with}}
+</template>
+
+<template name="survey">
+	<div class="ui ordered list">
+		<div class="item">
+			<div class="content">
+				<div class="header">My waiting time to be seen by a dentist was:</div>
+				<div class="description">{{qOne}}</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<div class="header">The dentist understood my problem and answered my questions:</div>
+				<div class="description">{{qTwo}}</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<div class="header">I will get my treatment done at the recommended facility within:</div>
+				<div class="description">{{qThree}}</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<div class="header">I was pleased with my experience with those who helped me today</div>
+				<!-- <div class="header">I was pleased with my experience in the emergency department today:</div> -->
+				<div class="description">{{qFour}}</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<div class="header">I would refer my friends here for care:</div>
+				<div class="description">{{qFive}}</div>
+			</div>
+		</div>
+	</div>
+</template>

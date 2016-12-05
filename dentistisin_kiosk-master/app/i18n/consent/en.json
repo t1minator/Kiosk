@@ -1,0 +1,32 @@
+{
+	"HEADER": {
+		"TITLE": "Informed Consent for Telemedicine Consultation Services"
+	},
+	"H1": "Introduction",
+	"P1": "Telemedicine involves the use of electronic communications to enable health care providers at different locations to share individual patient medical information for the purpose of improving patient care. Providers may include primary care practitioners, specialists, and/or subspecialists. The information may be used for diagnosis, therapy, follow-up and/or education, and may include any of the following:",
+	"I11": "Patient medical records",
+	"I12": "Medical images",
+	"I13": "Live two-way audio and video",
+	"I14": "Output data from medical devices and sound and video files",
+	"P2": "Electronic systems used will incorporate network and software security protocols to protect the confidentiality of patient identification and imaging data and will include measures to safeguard the data and to ensure its integrity against intentional or unintentional corruption.",
+	"H2": "Expected Benefits:",
+	"I21": "Improved access to medical care by enabling a patient to remain at a remote site while the dentist consults with healthcare practitioners at distant/other sites.",
+	"I22": "More efficient medical evaluation and management.",
+	"I23": "Obtaining expertise of a distant specialist.",
+	"H3": "Possible Risks:",
+	"I31": "In rare cases, information transmitted may not be sufficient (e.g. poor resolution of images) to allow for appropriate medical decision making by the nurse and consultant(s);",
+	"I32": "Delays in medical evaluation and treatment could occur due to deficiencies or failures of the equipment;",
+	"I33": "In very rare instances, security protocols could fail, causing a breach of privacy of personal medical information;",
+	"I34": "In rare cases, a lack of access to complete medical records may result in adverse drug interactions or allergic reactions or other judgment errors;",
+	"H4": "By signing this form, I understand the following:",
+	"I41": "I understand that the laws that protect privacy and the confidentiality of medical information also apply to telemedicine, and that no information obtained in the use of telemedicine which identifies me will be disclosed to researchers or other entities without my consent.",
+	"I42": "I understand that I have the right to withhold or withdraw my consent to the use of telemedicine in the course of my care at any time, without affecting my right to future care or treatment.",
+	"I43": "I understand that I have the right to inspect all information obtained and recorded in the course of a telemedicine interaction, and may receive copies of this information for a reasonable fee.",
+	"I44": "I understand that a variety of alternative methods of medical care may be available to me, and that I may choose one or more of these at any time. My nurse has explained the alternatives to my satisfaction.",
+	"I45": "I understand that telemedicine may involve electronic communication of my personal medical information to other medical practitioners who may be located in other areas, including out of state.",
+	"I46": "I understand that it is my duty to inform my doctor of electronic interactions regarding my care that I may have with other healthcare providers.",
+	"I47": "I understand that I may expect the anticipated benefits from the use of telemedicine in my care, but that no results can be guaranteed or assured.",
+	"H5": "Patient Consent To The Use of Telemedicine",
+	"P3": "I have read and understand the information provided above regarding telemedicine, have discussed it with my nurse or such assistants as may be designated, and all of my questions have been answered to my satisfaction. I hereby give my informed consent for the use of telemedicine in my medical care.",
+	"P4": "I hereby authorize The Dentist Is IN (consultant) to use telemedicine in the course of my dental consultation."
+}

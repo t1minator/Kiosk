@@ -1,0 +1,9 @@
+typings
+node_modules
+*.swo
+*.swp
+.DS_Store
+dist
+.tmp
+.sass-cache
+bower_components

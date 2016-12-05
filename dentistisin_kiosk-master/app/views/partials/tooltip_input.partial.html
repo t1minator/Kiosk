@@ -1,0 +1,28 @@
+<div class="field" ng-class="((dinForm[dinOptions.name].$dirty || dinForm.$submitted) && dinForm[dinOptions.name].$invalid) ? 'error' : ''">
+	<div class="ui icon input">
+		<input autocomplete="off"
+		       din-date-format
+		       ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
+		       placeholder="{{ dinOptions.transRoot + '.PLACEHOLDER' | translate }}"
+		       type="{{ dinOptions.type }}"
+		       name="{{ dinOptions.name }}"
+		       tabindex="{{ dinOptions.index }}"
+		       ng-model="dinModel"
+		       ng-trim="{{ dinOptions.trim }}"
+		       ng-change="{{ dinOptions.change }}"
+		       ng-minlength="{{ dinOptions.minlength }}"
+		       ng-maxlength="{{ dinOptions.maxlength }}"
+		       ng-pattern="dinOptions.pattern"
+		       ng-required="{{ dinOptions.required }}" />
+		<i class="icon"
+		   ng-show="dinForm[dinOptions.name].$dirty || dinForm.$submitted"
+		   ng-class="dinForm[dinOptions.name].$invalid ? 'red warning circle' : 
+		            ((dinOptions.required || dinForm[dinOptions.name].$dirty || dinForm.$submitted) ? 'green checkmark circle' : '')"></i>
+		<div class="ui fluid popup" ng-init="curTrans = dinOptions.transRoot + '.ERRORS'">
+			<div class="header" translate>{{ curTrans + '.HEADER' }}</div>
+			<ul class="list" ng-init="errs = ['rejected', 'required', 'minlength', 'maxlength', 'pattern', 'email', 'number', 'url', 'date']">
+				<li ng-repeat="err in errs" ng-show="dinForm[dinOptions.name].$error[err]" translate>{{ curTrans + '.' + err | uppercase }}</li>
+			</ul>
+		</div>
+	</div>
+</div>

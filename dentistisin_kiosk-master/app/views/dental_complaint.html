@@ -1,0 +1,47 @@
+<div class="ui centered padded grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide column">
+			<div class="ui attached icon message">
+				<i class="icon">3</i>
+				<div class="content">
+					<div class="header" translate>DENTAL.HEADER.TITLE</div>
+					<p translate>DENTAL.HEADER.SUBTEXT</p>
+				</div>
+			</div>
+			<fieldset ng-form="dentalForm" class="ui attached form segment">
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="two fields">
+					<div class="field">
+						<label translate>DENTAL.PAIN.LABEL</label>
+						<din-tooltip-input din-options="dental.pain" din-model="formModel.dentalPain" din-form="dentalForm"></din-tooltip-input>
+					</div>
+					<div class="field">
+						<label translate>DENTAL.DURATION.LABEL</label>
+						<din-tooltip-input din-options="dental.duration" din-model="formModel.dentalDuration" din-form="dentalForm"></din-tooltip-input>
+					</div>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label translate>DENTAL.SWELLING.LABEL</label>
+						<din-tooltip-dropdown din-options="dental.swelling" din-model="formModel.dentalSwelling" din-form="dentalForm"></din-tooltip-dropdown>
+					</div>
+					<div class="field">
+						<!--<div class="two fields">-->
+							<!--<div class="field">-->
+								<label translate>DENTAL.SEVERITY.LABEL</label>
+								<din-tooltip-input din-options="dental.severity" din-model="formModel.dentalSeverity" din-form="dentalForm"></din-tooltip-input>
+							<!--</div>-->
+						<!--</div>-->
+					</div>
+				</div>
+				<div class="field">
+					<label translate>DENTAL.DESCRIBE.LABEL</label>
+				</div>
+				<button ng-class="{disabled: dentalForm.$submitted && dentalForm.$invalid}" class="ui green submit right floated button" ng-click="nextPage()" translate>COMMON.SUBMIT</button>
+				<button class="ui green submit button" ng-click="previousPage()" translate>COMMON.BACK</button>
+			</fieldset>
+		</div>
+	</div>
+</div>
+

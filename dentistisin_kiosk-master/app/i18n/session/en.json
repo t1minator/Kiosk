@@ -1,0 +1,9 @@
+{
+	"STEPS": {
+		"PATIENT": "Patient Information",
+		"MEDICAL": "Medical Information",
+		"DENTAL": "Dental Complaint",
+		"VOIP": "Video Conference",
+		"SURVEY": "Survey"
+	}
+}

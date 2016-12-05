@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" ng-app="dinka" ng-csp>
+  <head>
+    <meta charset="utf-8">
+    <title>Dentist is In</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+  </head>
+  <body>
+    <section ui-view></section>
+    <div class="ui basic modal transition" din-inactivity-modal></div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+        <div id="confirm">
+            <div class="overlay"></div>
+            <div class="confirmContent">
+                <div class="lang">
+                    <p class="en">Please confirm you want to cancel your session which will delete all data from the DentistIsIn system</p>
+                    <p class="es">Bonvolu konfirmi ke vi volas nuligi vian seancon kiun forigos ciujn datumojn de la Dentisto En sistemo</p>
+                    <a href="javascript:void(0)" data-ng-click="confirmYes()" style="margin-right: 15px;" class="en ui green submit left floated button">Yes</a>
+                    <a href="javascript:void(0)" data-ng-click="confirmYes()" style="margin-right: 15px;" class="es ui green submit left floated button">jes</a>
+                    <a href="javascript:void(0)" data-ng-click="confirmCancel()" class="en ui gray submit left floated button">No</a>
+                    <a href="javascript:void(0)" data-ng-click="confirmCancel()" class="es ui gray submit left floated button">Nuligi</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    <script src="scripts/util/jwt.bundle.js"></script>
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+	<script src="scripts/services/meteor.js"></script>
+	<script src="scripts/services/jwt.js"></script>
+	<script src="scripts/services/lodash.js"></script>
+	<script src="scripts/services/messageSigner.js"></script>
+	<script src="scripts/services/translationCache.js"></script>
+	<script src="scripts/services/angularTranslatePartialCacheLoader.js"></script>
+	<script src="scripts/directives/error_tooltip.js"></script>
+	<script src="scripts/directives/tooltip_input.js"></script>
+	<script src="scripts/directives/tooltip_dropdown.js"></script>
+	<script src="scripts/directives/tooltip_checkbox.js"></script>
+	<script src="scripts/directives/tooltip_radio.js"></script>
+	<script src="scripts/directives/inactivity_modal.js"></script>
+	<script src="scripts/directives/date_format.js"></script>
+	<script src="scripts/controllers/meteor.js"></script>
+	<script src="scripts/controllers/language.js"></script>
+	<script src="scripts/controllers/code.js"></script>
+	<script src="scripts/controllers/steps.js"></script>
+	<script src="scripts/controllers/form.js"></script>
+	<script src="scripts/controllers/patient.js"></script>
+	<script src="scripts/controllers/medical.js"></script>
+	<script src="scripts/controllers/dental.js"></script>
+	<script src="scripts/controllers/voip.js"></script>
+	<script src="scripts/controllers/skip.js"></script>
+	<script src="scripts/controllers/survey.js"></script>
+	<script src="scripts/controllers/exit.js"></script>
+        <!-- <script src="scripts/controllers/main.js"></script> -->
+        <!-- endbuild -->
+</body>
+</html>

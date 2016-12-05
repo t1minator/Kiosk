@@ -1,0 +1,470 @@
+.rtcc-display-name-bar {
+  position: absolute;
+  width: 100%;
+  background: rgba(30, 30, 30, 0.5);
+  color: #ececec;
+  z-index: 100009;
+  white-space: nowrap;
+}
+.rtcc-videobox {
+  background: #45484d;
+  z-index: 99999;
+  font-family: arial, sans-serif;
+  box-shadow: 0px 0 7px 0 rgba(0, 0, 0, 0.5);
+}
+.rtcc-videobox .rtcc-active-video-container {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar {
+  position: absolute;
+  width: 100%;
+  background: rgba(30, 30, 30, 0.5);
+  color: #ececec;
+  z-index: 100009;
+  white-space: nowrap;
+  height: 37px;
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-chrono {
+  margin: 11px 20px 0 0;
+  display: none;
+  float: right;
+  font-size: 11pt;
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn {
+  cursor: pointer;
+  float: right;
+  height: 29px;
+  width: 29px;
+  margin: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn:hover {
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+  margin: 3px;
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn.rtcc-large-video-button {
+  background-image: url('../img/videobox/resize/enter_fullscreen.png');
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn.rtcc-medium-video-button {
+  background-image: url('../img/videobox/resize/enlarge.png');
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn.rtcc-medium-video-button.rtcc-from-fullscreen {
+  background-image: url('../img/videobox/resize/exit_fullscreen.png');
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn.rtcc-small-video-button {
+  background-image: url('../img/videobox/resize/enlarge.png');
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn.rtcc-small-video-button.rtcc-from-medium {
+  background-image: url('../img/videobox/resize/reduce.png');
+}
+.rtcc-videobox .rtcc-active-video-container .rtcc-topbar .rtcc-resize-btn.rtcc-simple-bar-button {
+  background-image: url('../img/videobox/resize/hide.png');
+}
+.rtcc-videobox .rtcc-remotevideo {
+  min-width: 800px;
+}
+.rtcc-videobox .rtcc-no-crop {
+  width: 100%;
+  height: 100%;
+}
+.rtcc-videobox .rtcc-local-viewbox {
+  width: 20%;
+  height: 20%;
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 100000;
+}
+.rtcc-videobox .rtcc-local-viewbox.full {
+  width: 100%;
+  height: 100%;
+}
+.rtcc-videobox .rtcc-local-viewbox .rtcc-local-view {
+  width: 100%;
+  height: 100%;
+  background: #45484d;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.rtcc-videobox .rtcc-disabled {
+  display: none;
+}
+.rtcc-videobox .rtcc-btnbar-container {
+  display: none;
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+}
+.rtcc-videobox .rtcc-buttons-bar {
+  position: relative;
+  z-index: 100009;
+  width: 136px;
+  height: 28px;
+  left: -50%;
+  /* #rtcc-buttonnopip          { background-position: 0 96px;}
+    #rtcc-buttonnopip.active   { background-position: -152px 96px;}
+    #rtcc-buttonnopip.disabled { background-position: -114px 96px;}
+
+    #rtcc-buttonmute           { background-position: 0 320px;}
+    #rtcc-buttonmute.active    { background-position: -152px 320px;}
+    #rtcc-buttonmute.disabled  { background-position: -114px 320px;}
+
+    #rtcc-buttonhangup         { background-position: 0 128px;}
+    #rtcc-buttonhangup.active  { background-position: 0 0;}
+
+    #rtcc-buttonnovideo            { background-position: 0 288px;}
+    #rtcc-buttonnovideo.active     { background-position: -152px 288px;}
+    #rtcc-buttonnovideo.disabled   { background-position: -114px 288px;}*/
+}
+.rtcc-videobox .rtcc-buttons-bar > div {
+  background-image: url('../img/videobox/buttons.png');
+  height: 28px;
+  width: 34px;
+  float: left;
+  cursor: pointer;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonnopip {
+  background-position: -2px 94px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonnopip.rtcc-active {
+  background-position: -154px 94px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonnopip.disabled {
+  background-position: -116px 94px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonmute {
+  background-position: -2px 318px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonmute.rtcc-active {
+  background-position: -154px 318px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonmute.disabled {
+  background-position: -116px 318px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonhangup {
+  background-position: -2px 126px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonhangup.rtcc-active {
+  background-position: -2px -2px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonnovideo {
+  background-position: -2px 286px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonnovideo.rtcc-active {
+  background-position: -154px 286px;
+}
+.rtcc-videobox .rtcc-buttons-bar .rtcc-buttonnovideo.disabled {
+  background-position: -116px 286px;
+}
+.rtcc-videobox .rtcc-disabledvideo {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  font-family: sans-serif;
+  color: #ececec;
+}
+.rtcc-videobox .rtcc-passive-speaker-container {
+  display: none;
+}
+.rtcc-videobox .rtcc-participant-list-btn {
+  display: none;
+}
+.rtcc-videobox .rtcc-participant-list {
+  display: none;
+}
+.rtcc-videobox.rtcc-conf-mode {
+  width: 400px;
+}
+.rtcc-videobox.rtcc-conf-mode.rtcc-medium-size {
+  width: 800px;
+}
+.rtcc-videobox.rtcc-conf-mode.rtcc-simple-bar .rtcc-passive-speaker-container {
+  display: none;
+}
+.rtcc-videobox.rtcc-conf-mode.rtcc-simple-bar .rtcc-participant-list-btn {
+  display: none;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-active-video-container {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-passive-speaker-container {
+  background: #45484d;
+  display: block;
+  position: absolute;
+  left: 80%;
+  height: 100%;
+  width: 20%;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-passive-speaker-container .rtcc-passive-speaker-box {
+  background: #45484d;
+  height: 24%;
+  margin: 2% 2% 2% 2%;
+  width: 96%;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-passive-speaker-container .rtcc-passive-speaker-box video {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-passive-speaker-container .rtcc-passive-speaker-box .rtcc-display-name {
+  position: absolute;
+  width: 100%;
+  background: rgba(30, 30, 30, 0.5);
+  color: #ececec;
+  z-index: 100009;
+  white-space: nowrap;
+  height: 13px;
+  padding-left: 2px;
+  font-size: 7pt;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list-btn {
+  width: 17px;
+  height: 50px;
+  background: url('../img/videobox/conf/plist.png') 0 -12px;
+  position: absolute;
+  left: 0;
+  top: 45px;
+  cursor: pointer;
+  display: block;
+  z-index: 100009;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list {
+  width: 200px;
+  position: absolute;
+  max-height: 100%;
+  z-index: 100009;
+  left: -200px;
+  overflow: auto;
+  color: #ececec;
+  box-shadow: -2px 0 7px 0 rgba(0, 0, 0, 0.5);
+  background: black;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list.rtcc-show {
+  display: block;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant {
+  padding: 7px 3px 0 7px;
+  height: 22px;
+  background: #45484d;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant.rtcc-participant-host {
+  font-weight: bold;
+  background: #272727;
+  border-bottom: 2px solid #ececec;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant.rtcc-participant-host .rtcc-participant-btn-box {
+  display: none;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-name {
+  margin-right: 54px;
+  overflow: hidden;
+  font-size: 9pt;
+  white-space: nowrap;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box {
+  width: 54px;
+  float: right;
+  display: none;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box > div {
+  cursor: pointer;
+  height: 17px;
+  width: 18px;
+  background: yellow;
+  display: inline-block;
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box > div.rtcc-participant-kick {
+  background: url('../img/videobox/conf/kick.png');
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box > div.rtcc-participant-deafen {
+  background: url('../img/videobox/conf/deafen.png');
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box > div.rtcc-participant-deafen.rtcc-active {
+  background: url('../img/videobox/conf/undeafen.png');
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box > div.rtcc-participant-mute {
+  background: url('../img/videobox/conf/mute.png');
+}
+.rtcc-videobox.rtcc-conf-mode .rtcc-participant-list .rtcc-participant .rtcc-participant-btn-box > div.rtcc-participant-mute.rtcc-active {
+  background: url('../img/videobox/conf/unmute.png');
+}
+.rtcc-videobox.rtcc-conf-mode.rtcc-host .rtcc-participant .rtcc-participant-btn-box {
+  display: block;
+}
+.rtcc-videobox {
+  width: 320px;
+  height: 180px;
+}
+.rtcc-videobox.rtcc-simple-bar {
+  height: 75px;
+  width: 320px;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-local-viewbox {
+  display: none;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-remotevideo {
+  display: none;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-topbar {
+  display: none;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-active-video-container {
+  min-width: 800px;
+  min-height: 480px;
+  width: 100%;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-active-video-container .rtcc-disabledvideo {
+  display: none;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-active-video-container .rtcc-topbar {
+  display: block;
+  background: none;
+  border-bottom: 1px solid #ececec;
+}
+.rtcc-videobox.rtcc-simple-bar .rtcc-active-video-container .rtcc-btnbar-container .rtcc-buttons-bar {
+  display: block;
+}
+.rtcc-videobox.rtcc-medium-size {
+  width: 800px;
+  height: 452px;
+}
+.rtcc-videobox.rtcc-medium-size .rtcc-active-video-container .rtcc-topbar .rtcc-chrono {
+  display: block;
+}
+.rtcc-videobox:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+  left: 0 !important;
+  top: 0 !important;
+  position: relative;
+  margin: auto;
+}
+.rtcc-videobox:-webkit-full-screen .rtcc-active-video-container .rtcc-topbar .rtcc-chrono {
+  display: block;
+}
+.rtcc-videobox.rtcc-videobox-container {
+  min-width: 800px;
+  min-height: 480px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.rtcc-startcallbox {
+  display: none;
+  width: 320px;
+  height: 180px;
+  background-color: #3e3e3e;
+  color: #FFF;
+  position: fixed;
+  left: 210px;
+  top: 10px;
+  font-family: Arial;
+  -moz-box-shadow: 0px 5px 10px 0px #000000;
+  -webkit-box-shadow: 0px 5px 10px 0px #000000;
+  -o-box-shadow: 0px 5px 10px 0px #000000;
+  box-shadow: 0px 5px 10px 0px #000000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=180, Strength=10);
+  z-index: 99999;
+}
+.rtcc-startcallbox .button-actions a {
+  width: 34px;
+  height: 27px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 1px;
+}
+.rtcc-startcallbox .button-actions a:hover {
+  border: 1px solid #656565;
+  margin: 0;
+}
+.rtcc-startcallbox .button-actions {
+  width: 140px;
+  height: 28px;
+  position: absolute;
+  left: 116px;
+  bottom: 9px;
+}
+.rtcc-startcallbox .button-actions .container {
+  width: 35px;
+  height: 28px;
+  float: left;
+}
+.rtcc-startcallbox .name {
+  position: absolute;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+.rtcc-startcallbox .picto {
+  background-repeat: no-repeat;
+  position: absolute;
+}
+/* INCOMING BOX */
+.incoming-call {
+  display: none;
+  height: 90px;
+}
+.incoming-call .picto {
+  width: 60px;
+  height: 37px;
+  background-image: url('../img/callbox/incoming.gif');
+  top: 26px;
+  left: 20px;
+}
+.incoming-call .button-actions {
+  left: 140px;
+}
+.incoming-call .name {
+  left: 82px;
+  width: 220px;
+  text-align: center;
+  top: 16px;
+}
+.incoming-call .button-actions a.video {
+  background-image: url('../img/video.png');
+}
+.incoming-call .button-actions a.ignore {
+  background-image: url('../img/ignore.png');
+}
+.incoming-call .button-actions a.hangup {
+  background-image: url('../img/hangup.png');
+}
+/**
+ * OUTGOING CALL
+ */
+.outgoing-call .picto {
+  height: 30px;
+  width: 100%;
+  background: url('../img/callbox/outgoing.gif') center no-repeat;
+  top: 50px;
+}
+.outgoing-call .name {
+  width: 100%;
+  text-align: center;
+  top: 85px;
+}
+.outgoing-call .button-actions a.hangup {
+  background-image: url('../img/hangup.png');
+}
+/*.outgoing-call .button-actions a.video {
+    background-image: url('@{img}outgoingcall/video.png');
+}
+
+.outgoing-call .button-actions a.settings {
+    background-image: url('@{img}outgoingcall/settings.png');
+}*/

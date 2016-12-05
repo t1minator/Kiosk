@@ -1,0 +1,16 @@
+{
+	"COMMON": {
+		"CONTINUE": "Continue",
+		"NEXT": "Next",
+		"BACK": "Go Back",
+		"CANCELSESSION": "Cancel Session",
+		"TRUE": "True",
+		"FALSE": "False",
+		"NEVER": "Never",
+		"SUBMIT": "Submit",
+		"YES": "Yes",
+		"NO": "No",
+		"INACTIVITY_ALERT": "Inactivity Alert",
+		"INACTIVITY_MESSAGE": "Your session will automatically expire in {{ timeRemaining }} seconds due to inactivity. Please touch the screen to resume your session."
+	}
+}

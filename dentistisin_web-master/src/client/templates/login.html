@@ -1,0 +1,53 @@
+<template name="login">
+	<div class="ka-top ui center aligned three column stackable page grid">
+		<div class="eight wide column">
+			<div class="ui large fluid {{#if error}} error {{/if}} {{#if showResult}} success {{/if}} form segment">
+				<h2 class="ui center aligned dividing header">
+					{{#if forgotPassword}}
+						Forgot Password
+					{{else}}
+						Login
+					{{/if}}
+				</h2>
+				{{#if error}}
+					<div class="ui icon error message">
+						<i class="warning icon"></i>
+						<div class="content">
+							<p>{{error}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if sent}}
+					<div class="ui icon success message">
+						<i class="checkmark icon"></i>
+						<div class="content">
+							<p>{{sent}}</p>
+						</div>
+					</div>
+				{{/if}}
+				{{#if forgotPassword}}
+					{{> _forgot_password }}
+				{{else}}
+					{{> _login }}
+				{{/if}}
+
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_login">
+	{{#autoForm schema="Users.loginSchema" id="loginForm" template="semanticUI"}}
+		{{> afQuickField name="username"}}
+		{{> afQuickField name="password" type="password"}}
+		<button type="submit" class="ui small green right floated labeled button">Login</button>
+		<a href="#" id="forgotPasswordLink">Forgot password?</a>
+	{{/autoForm}}
+</template>
+
+<template name="_forgot_password">
+	{{#autoForm schema="Users.forgotPasswordSchema" id="forgotPasswordForm" template="semanticUI"}}
+		{{> afQuickField name="email" type="email"}}
+		<button type="submit" class="ui small green right floated labeled button">Reset</button>
+	{{/autoForm}}
+</template>

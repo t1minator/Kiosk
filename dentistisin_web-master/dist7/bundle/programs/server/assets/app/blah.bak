@@ -1,0 +1,28 @@
+        //"truevault_test": {
+        //      "username": "d_user",
+        //      "api_key": "38d8a194-ceeb-4942-858e-009688d56c55"
+        //}
+//}
+
+                //mongodb://dinadmin:k10eipMS@novus.modulusmongo.net:27017/seHos8uv
+		//kGwMqrhTdolw4qmXcNo9lPwScDjBnDH
+		// mongodb://dinadmin:k10eipMS@novus.modulusmongo.net:27017/seHos8uv
+		//MONGO_URL "mongodb://dinadmin:kGwMqrhTdolw4qmXcNo9lPwScDjBnDH@c771.candidate.19.mongolayer.com:10771,c764.candidate.36.mongolayer.com:10764/DINWA?replicaSet=set-55066db69380bd1b7b000115"
+		//MONGO_OPLOG_URL "mongodb://dinadmin:kGwMqrhTdolw4qmXcNo9lPwScDjBnDH@c771.candidate.19.mongolayer.com:10771,c764.candidate.36.mongolayer.com:10764/local?replicaSet=set-55066db69380bd1b7b000115&authSource=DINWA"
+
+//mongodb://dinadmin:kGwMqrhTdolw4qmXcNo9lPwScDjBnDH@c771.candidate.19.mongolayer.com:10771,c764.candidate.36.mongolayer.com:10764/DINWA?replicaSet=set-55066db69380bd1b7b000115
+//mongodb://dinadmin:kGwMqrhTdolw4qmXcNo9lPwScDjBnDH@c771.candidate.19.mongolayer.com:10771,c764.candidate.36.mongolayer.com:10764/local?replicaSet=set-55066db69380bd1b7b000115&authSource=DINWA
+
+//username: dinadmin
+//password: 5GZHa2fTgwUJ9mhcYFmrTN
+//username: dinoplogger
+//password: oA7Jnj0WSnhAwldB513jMS
+
+// "mongodb://dinadmin:adjoins43672[exhibits@c1110.candidate.18.mongolayer.com:11110,c1059.candidate.20.mongolayer.com:11059/din-test?replicaSet=set-5526ef17390d2196d9001787&ssl=true&w=majority&journal=true"
+// MONGO_OPLOG_URL "mongodb://dinadmin:adjoins43672[exhibits@c1110.candidate.18.mongolayer.com:11110,c1059.candidate.20.mongolayer.com:11059/local?replicaSet=set-5526ef17390d2196d9001787&ssl=true&authSource=din-test&w=majority&journal=true"
+
+// MONOG_URL "mongodb://dinadmin:5GZHa2fTgwUJ9mhcYFmrTN@c1110.candidate.18.mongolayer.com:11110,c1059.candidate.20.mongolayer.com:11059/din-test?replicaSet=set-5526ef17390d2196d9001787&ssl=true&w=majority&journal=true"
+// MONGO_OPLOG_URL "mongodb://dinoplogger:oA7Jnj0WSnhAwldB513jMS@c1110.candidate.18.mongolayer.com:11110,c1059.candidate.20.mongolayer.com:11059/local?replicaSet=set-5526ef17390d2196d9001787&ssl=true&w=majority&journal=true&authSource=din-test
+
+// MONGO_URL mongodb://dinadmin:5GZHa2fTgwUJ9mhcYFmrTN@c253.candidate.1.mongolayer.com:10253,c876.candidate.0.mongolayer.com:10876/din-wa-alpha?replicaSet=set-552d6f762ab543356d001963&w=majority&journal=true
+// MONGO_OPLOG_URL mongodb://dinoplogger:oA7Jnj0WSnhAwldB513jMS@c253.candidate.1.mongolayer.com:10253,c876.candidate.0.mongolayer.com:10876/local?replicaSet=set-552d6f762ab543356d001963&w=majority&journal=true&authSource=din-wa-alpha

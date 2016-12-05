@@ -1,0 +1,169 @@
+var inviteUser = new ReactiveVar(false);
+var loading = new ReactiveVar(false);
+
+Template._users_table.onCreated(function () {
+	inviteUser = new ReactiveVar(false);
+});
+
+Template._invite_user.onCreated(function () {
+	loading = new ReactiveVar(false);
+});
+
+Template._invite_user.onRendered(function () {
+	AutoForm.resetForm('inviteUser');
+});
+
+Template._invite_user.helpers({
+	loading: function() {
+		return loading.get();
+	}
+});
+
+Template._invite_user.events({
+	'click #cancelInvite': function(event) {
+		// Resetting the form here doesn't work
+		inviteUser.set(false);
+	}
+});
+
+AutoForm.hooks({
+	inviteUser: {
+		onSuccess: function() {
+			inviteUser.set(false);
+		},
+		beginSubmit: function() {
+			loading.set(true);
+		},
+		endSubmit: function() {
+			loading.set(false);
+		}
+	}
+})
+
+Template._users_table.helpers({
+	inviteUser: function() {
+		return inviteUser.get();
+	}
+});
+
+Template._users_table.events({
+	'click #inviteUser': function(event) {
+		inviteUser.set(true);
+	}
+});
+
+var edit = new ReactiveVar(false);;
+
+Template.profile.onCreated(function () {
+	edit = new ReactiveVar(false);
+});
+
+Template.profile.helpers({
+	edit: function() {
+		return edit.get();
+	}
+		
+});
+
+Template._user_details.events({
+	'click #editUser': function(event) {
+		edit.set(true);
+	}
+});
+
+var loading = new ReactiveVar(false);
+
+Template._edit_user.onCreated(function () {
+	loading = new ReactiveVar(false);
+});
+
+Template._edit_user.helpers({
+	loading: function() {
+		return loading.get();
+	}
+});
+
+AutoForm.hooks({
+	updateUser: {
+		beginSubmit: function() {
+			loading.set(true);
+		},
+		endSubmit: function() {
+			loading.set(false);
+		},
+		onSuccess: function(formType, result) {
+			edit.set(false);
+		}
+	}
+});
+
+Template._users_table_row.helpers({
+	name: function() {
+		return this.username || 'Not set yet';
+	},
+	email: function() {
+		return this.emails[0].address;
+	},
+	group: function() {
+		groups = { ma: "Medical Admin", ta: "Technical Admin", dentist: "Dentist" };
+		var display;
+		try {
+			display = groups[this.roles[0]];
+		} catch (e) {
+			display = "None";
+		}
+		return display;
+	},
+	enabled: function() {
+		return this.active ? 'Yes' : 'No';
+	}
+});
+
+Template._user_details.helpers({
+	name: function() {
+		return this.username || 'Not set yet';
+	},
+	email: function() {
+		return this.emails[0].address;
+	},
+	address: function() {
+		return this.address || 'Not set yet';
+	},
+	phone: function() {
+		return this.phone || 'Not set yet';
+	},
+});
+
+Template._users_table_header.helpers({
+	sortState: function(id) {
+		var controller = Router.current();
+		var sort = controller.usersSort();
+		if (sort[id] === '-1') return 'descending';
+		if (sort[id] === '1') return 'ascending';
+		return '';
+	}
+});
+
+var sort = function(id) {
+	var controller = Router.current();
+	var query = _.clone(controller.params.query);
+	if (query.sortKey === id) {
+		var dir;
+		if (query.sortDir === '-1') dir = '1';
+		else if (query.sortDir === '1') dir = '-1';
+		else dir = '1';
+		query.sortDir = dir;
+	} else {
+		query.sortKey = id;
+		if (id === 'createdAt') query.sortDir = '-1';
+		else query.sortDir = '1';
+	}
+	var path = controller.route.path({}, { query: query });
+	Router.go(path);
+};
+
+Template._users_table_header.events({
+	'click #usernameSort': function (event) {
+		sort('username');
+	}
+});

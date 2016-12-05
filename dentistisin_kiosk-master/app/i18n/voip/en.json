@@ -1,0 +1,9 @@
+{
+	"VOIP": {
+		"LOADING": "Loading...",
+		"INITIALIZING": "Initializing...",
+		"WAITING": "Waiting for the next available dentist. Please pick up the phone receiver and we will be right with you.",
+		"ASSIGNED": "A dentist has been assigned to you and will be with you shortly",
+		"FAILED": "Something went wrong, attempting to to connect to a new dentist..."
+	}
+}

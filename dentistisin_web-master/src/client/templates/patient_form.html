@@ -1,0 +1,60 @@
+<template name="patient_form">
+		<div class="ui top attached tabular menu">
+			<a id="patientTab" class="{{activeTab 'patientInfo'}} item">
+				Patient Information
+			</a>
+			<a id="dentistTab" class="{{activeTab 'dentistNotes'}} {{enabledTab}} item">
+				Dentist Notes
+			</a>
+		</div>
+		<div class="ui bottom attached segment">
+			<div class="ui horizontal divider">Language</div>
+			{{language}}
+			{{#with patient.form}}
+				<div class="ui horizontal divider">Name</div>
+				{{name}}
+				<div class="ui horizontal divider">Address</div>
+				{{patientAddressOne}} <br/>
+				{{#if patientAddressTwo}}
+					{{patientAddressTwo}} <br/>
+				{{/if}}
+				{{patientAddressCity}}, {{patientAddressState}} {{patientAddressZip}} <br/>
+				<div class="ui horizontal divider">Contact</div>
+				<label>E-mail</label> {{patientContactEmail}} <br/>
+				<label>Phone</label> {{patientContactPhone}} <br/>
+				<div class="ui horizontal divider">Date of Birth</div>
+				{{dob}}
+				<div class="ui horizontal divider">Sex</div>
+				{{sex}}
+				<div class="ui horizontal divider">Payment Method</div>
+				{{payment patientInsuranceInsurance}}
+				<div class="ui horizontal divider">Medical Conditions</div>
+				{{conditions}}
+				<div class="ui horizontal divider">Current Medications</div>
+				{{medications}}
+				<div class="ui horizontal divider">Allergies</div>
+				{{allergies}}
+			{{/with}}
+		</div>
+		<div class="ui form bottom attached fluid segment">
+			{{#autoForm schema="Schemas.DentistNotes" meteormethod="createDentistNotes" id="createDentistNotes" type="method"}}
+				{{> afQuickField name="clinicalImpression" template="din" rows=4}}
+				{{> afQuickField name="recommendation" template="din" rows=4}}
+				{{> afQuickField name="recommendedPrescriptions" template="din" rows=4}}
+				<button type="submit" class="ui small green right labeled icon submit button">
+					<i class="upload icon"></i>
+					Submit and End Call
+				</button>
+			{{/autoForm}}
+		</div>
+		<div class="ui {{disabledCall}} bottom attached segment">
+			<div class="ui checkbox">
+				<input type="checkbox" name="readAll">
+				<label>I have reviewed all submitted patient information</label>
+			</div>
+			<a id="callPatient" class="ui small green right labeled icon button {{readAll}}">
+				<i class="call icon"></i>
+				Call Patient
+			</a>
+		</div>
+</template>

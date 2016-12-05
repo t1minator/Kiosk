@@ -1,0 +1,24 @@
+{
+	"name": "Dentist is IN",
+	"version": "0.9.10",
+	"app": {
+		"background": {
+			"scripts": ["scripts/background.js"]
+		}
+	},
+	"permissions": [
+		"audioCapture",
+		"videoCapture",
+		"webview",
+		"storage",
+		"power"
+	],
+	"webview": {
+		"partitions": [{
+			"name": "sightcall",
+			"accessible_resources": ["sightcall/call.html", "sightcall/call.js", "sightcall/RtccUi.js", "sightcall/css/rtcc.css"]
+		}]
+	},
+	"kiosk_enabled": true,
+	"kiosk_only": true
+}

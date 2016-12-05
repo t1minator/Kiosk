@@ -1,0 +1,34 @@
+<div class="ui basic modal transition" din-inactivity-modal></div>
+<div class="ui fluid ordered steps">
+	<div class="step"
+	     ng-class="{ completed: stepState.patient.completed, disabled: stepState.patient.disabled, completed: stepState.patient.completed }">
+		<div class="content">
+			<div class="title" translate>STEPS.PATIENT</div>
+		</div>
+	</div>
+	<div class="step"
+	     ng-class="{ completed: stepState.medical.completed, disabled: stepState.medical.disabled, completed: stepState.medical.completed }">
+		<div class="content">
+			<div class="title" translate>STEPS.MEDICAL</div>
+		</div>
+	</div>
+	<div class="step"
+	     ng-class="{ completed: stepState.dental.completed, disabled: stepState.dental.disabled, completed: stepState.dental.completed }">
+		<div class="content">
+			<div class="title" translate>STEPS.DENTAL</div>
+		</div>
+	</div>
+	<div class="step"
+	     ng-class="{ completed: stepState.voip.completed, disabled: stepState.voip.disabled, completed: stepState.voip.completed }">
+		<div class="content">
+			<div class="title" translate>STEPS.VOIP</div>
+		</div>
+	</div>
+	<div class="step"
+	     ng-class="{ completed: stepState.survey.completed, disabled: stepState.survey.disabled, completed: stepState.survey.completed }">
+		<div class="content">
+			<div class="title" translate>STEPS.SURVEY</div>
+		</div>
+	</div>
+</div>
+<ui-view></ui-view>

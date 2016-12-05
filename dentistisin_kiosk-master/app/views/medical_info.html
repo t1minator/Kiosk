@@ -1,0 +1,87 @@
+<div class="ui centered padded grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide column">
+			<div class="ui attached icon message">
+				<i class="icon">2</i>
+				<div class="content">
+					<div class="header" translate>MEDICAL.HEADER.TITLE</div>
+					<p translate>MEDICAL.HEADER.SUBTEXT</p>
+				</div>
+			</div>
+			<fieldset ng-form="medicalForm" class="ui attached form segment">
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="field">
+					<label translate>MEDICAL.CONDITIONS.LABEL</label>
+					<div class="four fields">
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.hivAids" din-model="formModel.medicalConditionsHivAids" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.pregnant" din-model="formModel.medicalConditionsPregnant" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.contraceptives" din-model="formModel.medicalConditionsContraceptives" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.cancer" din-model="formModel.medicalConditionsCancer" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+					</div>
+					<div class="four fields">
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.diabetes" din-model="formModel.medicalConditionsDiabetes" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.heart" din-model="formModel.medicalConditionsHeart" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.blood" din-model="formModel.medicalConditionsBlood" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.kidneyLiver" din-model="formModel.medicalConditionsKidneyLiver" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+					</div>
+					<div class="four fields">
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.stomach" din-model="formModel.medicalConditionsStomach" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.bleeding" din-model="formModel.medicalConditionsBleeding" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.psychiatric" din-model="formModel.medicalConditionsPsychiatric" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.conditions.radiation" din-model="formModel.medicalConditionsRadiation" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label translate>MEDICAL.MEDICATIONS.LABEL</label>
+					<din-tooltip-input din-options="medical.medications" din-model="formModel.medicalMedications" din-form="medicalForm"></din-tooltip-input>
+				</div>
+				<div class="field">
+					<label translate>MEDICAL.ALLERGIES.LABEL</label>
+					<div class="four fields">
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.allergies.aspirin" din-model="formModel.medicalAllergiesAspirin" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.allergies.codeine" din-model="formModel.medicalAllergiesCodeine" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.allergies.penicillin" din-model="formModel.medicalAllergiesPenicillin" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<div class="field">
+							<din-tooltip-checkbox din-options="medical.allergies.sulfa" din-model="formModel.medicalAllergiesSulfa" din-form="medicalForm"></din-tooltip-checkbox>
+						</div>
+						<din-tooltip-input din-options="medical.allergies.other" din-model="formModel.medicalAllergiesOther" din-form="medicalForm"></din-tooltip-input>
+				</div>
+				<br />
+				<button ng-class="{disabled: medicalForm.$submitted && medicalForm.$invalid}" class="ui green submit right floated button" ng-click="nextPage()" translate>COMMON.NEXT</button>
+				<button class="ui green submit button" ng-click="previousPage()" translate>COMMON.BACK</button>
+			</fieldset>
+		</div>
+	</div>
+</div>
+

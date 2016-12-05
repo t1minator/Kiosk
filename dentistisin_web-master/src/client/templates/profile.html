@@ -1,0 +1,237 @@
+<template name="profile">
+	<div class="ui page grid">
+		<div class="sixteen wide column">
+			<h2 class="ui dividing header">
+				{{#if profile.profile.name}}
+					{{profile.profile.name}}'s Profile
+				{{else}}
+					{{displayName profile._id}}'s Profile
+				{{/if}}
+			</h2>
+			{{> _admin_enable }}
+			<div class="nine wide column">
+				{{#if edit}}
+					{{> _edit_user }}
+				{{else}}
+					{{> _user_details }}
+				{{/if}}
+			</div>	
+			{{#if isMe profile._id}}
+				{{> _change_password }}
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="_admin_enable">
+	{{#unless isMe profile._id}}
+		{{#if isInRole 'ma,ta'}}
+			{{#if profile.active}}
+				<div id="disableAcct" class="negative ui small {{loading}} button">Disable Account</div>
+			{{else}}
+				<div id="enableAcct" class="positive ui small {{loading}} button">Enable Account</div>
+			{{/if}}
+		{{/if}}
+	{{/unless}}
+</template>
+
+<template name="_admin_group">
+	{{#unless isMe profile._id}}
+		{{#if isInRole 'ma,ta'}}
+			<h4 class="ui header">
+				Group
+			</h4>
+			Bye
+		{{/if}}
+	{{/unless}}
+</template>
+
+<template name="_email">
+	<h4 class="ui header">
+		Email Address
+	</h4>
+	{{#each profile.emails}}
+		{{this.address}}
+	{{/each}}
+</template>
+
+
+<template name="_edit_user">
+	<div class="ui attached message">
+		Edit User Details
+	</div>
+	<div class="ui attached form segment">
+		{{#if loading}}
+			<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+		{{/if}}
+		{{#autoForm schema="Users.updateUserSchema" id="changeUser" template="semanticUI" errorsInLabels=true resetOnSuccess=true}}
+			<div class="ui grid">
+				<div class="row">
+					<div class="eight wide column">
+						<div class="field">
+							<label>Name:</label>
+							<p>{{ profile.profile.name }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name='username' value=profile.username}}
+					</div>
+					<div style="display:none">
+                        {{> afQuickField name='id' value=profile._id type="hidden"}}
+                    </div>
+					{{#each profile.emails}}
+						<div class="eight wide column">
+							{{> afQuickField name='email' value=this.address }}
+						</div>
+					{{/each}}
+				</div>
+				<div class="row">
+					<div class="eight wide column">
+						<div class="field required">
+							{{> afQuickField name='address' value=profile.address }}
+						</div>
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name='phone' value=profile.phone }}
+					</div>
+				</div>
+				
+			</div><br/>
+			<button id="finishUpdate" type="submit" class="ui small green labeled icon button"><i class="save icon"></i> Save</button>
+		{{/autoForm}}
+	</div>
+</template>
+
+<template name="_user_details">
+	<div class="ui attached message">
+		User Details
+	</div>
+	<div class="ui attached form segment">
+		<div class="ui grid">
+			<div class="row">
+				<div class="eight wide column">
+					<div class="field">
+						<label>Name:</label>
+						<p>{{ profile.profile.name }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="eight wide column">
+					<div class="field">
+						<label>User Name:</label>
+						<p>{{ profile.username }}</p>
+					</div>
+				</div>
+				<div class="eight wide column">
+					<div class="field">
+						<label>Email Address:</label>
+						<p>{{#each profile.emails}}{{this.address}}{{/each}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="eight wide column">
+					<div class="field">
+						<label>Address:</label>
+						<p>{{ profile.address }}</p>
+						
+					</div>
+				</div>
+				<div class="eight wide column">
+					<div class="field">
+						<label>Phone Number</label>
+						<p>{{ profile.phone }}</p>
+					</div>
+				</div>
+			</div>
+		</div><br/>
+		<button id="editUser" class="ui small green labeled icon button"><i class="edit icon"></i> Edit</button>
+	</div>
+</template>
+
+<template name="_update_email">
+	<h4 class="ui header">
+		Update Email Address
+	</h4>
+	{{#autoForm schema="Users.changeEmailSchema" id="changeEmail" template="semanticUI" errorsInLabels=true resetOnSuccess=true}}
+		{{> afQuickField name="email"}}
+		{{> afQuickField name="password" type="password"}}
+		<button type="submit" class="ui small green right floated labeled button">Update</button>
+	{{/autoForm}}
+	<br />
+</template>
+<template name="_change_password">
+	<h4 class="ui header">
+		Update Password
+	</h4>
+	<ul class="ui list">
+		{{#each passwordRequirements}}
+			<li>{{this}}</li>
+		{{/each}}
+		<li>Alternatively use a passphrase (at least 20 characters long).</li>
+	</ul>
+	{{#autoForm schema="Users.changePasswordSchema" id="changePassword" type="normal" template="semanticUI" errorsInLabels=true resetOnSuccess=true trimStrings=false}}
+		{{> afQuickField name="currentPassword" type="password"}}
+		{{> afQuickField name="newPassword" type="password"}}
+		{{> afQuickField name="confirmPassword" type="password"}}
+		<button type="submit" class="ui small green right floated labeled button">Submit</button>
+	{{/autoForm}}
+</template>
+
+<template name="_list_verified_emails">
+	{{#if verifiedEmails}}
+		<h4 class="ui header">
+			Verified Email Addresses
+		</h4>
+		{{#each verifiedEmails}}
+			{{> _verified_email }}
+		{{/each}}
+	{{/if}}
+</template>
+
+<template name="_list_unverified_emails">
+	{{#if unverifiedEmails}}
+		<h4 class="ui header">
+			Unverified Email Addresses
+		</h4>
+		{{#each unverifiedEmails}}
+			{{> _unverified_email }}
+		{{/each}}
+	{{/if}}
+</template>
+
+<template name="_verified_email">
+	<div class="ui green label">
+		{{address}}
+		{{#if canDelete}}
+			<i class="delete icon"></i>
+		{{/if}}
+	</div>
+</template>
+
+<template name="_unverified_email">
+	{{#if editing}}
+	{{else}}
+		<div class="ui yellow label">
+			{{address}}
+			{{#if isMe profile._id}}
+				<i class="delete icon remove"></i>
+			{{/if}}
+		</div>
+		{{#if isMe profile._id}}
+			<a href="#">Resend Verification Email</a>
+		{{/if}}
+	{{/if}}
+</template>
+
+<template name="afFormGroup_textarea">
+    <div class="field required">
+        <label>
+          Address
+		</label>
+	  {{> afFieldInput afFieldInputAtts}}
+    </div>
+</template>

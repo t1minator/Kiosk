@@ -1,0 +1,15 @@
+<div class="ui segment" id="webview-container">
+	<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+	<div class="ui dimmer" ng-class="{active: !callInProgress && voipState}">
+		<div class="ui large indeterminate text loader" ng-show="voipState">
+			<div ng-show="voipFailed" translate>VOIP.FAILED</div>
+			<div ng-switch="voipState">
+				<div ng-switch-when="loadingSightcall" translate>VOIP.LOADING</div>
+				<div ng-switch-when="initializingSightcall" translate>VOIP.INITIALIZING</div>
+				<div ng-switch-when="enqueued" translate style="font-size:1.5em;">VOIP.WAITING</div>
+				<div ng-switch-when="assigned" translate>VOIP.ASSIGNED</div>
+			</div>
+		</div>
+	</div>
+	<webview sightcall-webview src="../sightcall/call.html" class="ka-sc" id="sightcall-webview" partition="sightcall" allowtransparency="on"></webview>	
+</div>

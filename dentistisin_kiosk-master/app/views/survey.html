@@ -1,0 +1,64 @@
+<div class="ui centered padded grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide column">
+			<div class="ui attached icon message">
+				<i class="icon">5</i>
+				<div class="content">
+					<div class="header" translate>SURVEY.HEADER.TITLE</div>
+					<p translate>SURVEY.HEADER.SUBTEXT</p>
+				</div>
+			</div>
+			<form class="ui form attached fluid segment" name="surveyForm" ng-submit="surveySubmit()" novalidate>
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<din-tooltip-radio din-options="survey.waitTime" din-model="surveyModel.waitTime" din-form="surveyForm"></din-tooltip-radio>
+				<din-tooltip-radio din-options="survey.understanding" din-model="surveyModel.understanding" din-form="surveyForm"></din-tooltip-radio>
+				<din-tooltip-radio din-options="survey.treatment" din-model="surveyModel.treatment" din-form="surveyForm"></din-tooltip-radio>
+				<din-tooltip-radio din-options="survey.pleased" din-model="surveyModel.pleased" din-form="surveyForm"></din-tooltip-radio>
+				<din-tooltip-radio din-options="survey.refer" din-model="surveyModel.refer" din-form="surveyForm"></din-tooltip-radio>
+				<button class="ui green submit right floated button" translate>COMMON.SUBMIT</button>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- 
+<form class="ui form">
+	<h4 class="ui dividing header" translate>SURVEY.HEADER</h4>
+	<div class="grouped fields">
+		<label for="qone" translate>SURVEY.QUESTION_ONE</label>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="qone" />
+				<label translate>SURVEY.ONE_TO_FIVE_MINUTES</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="qone" />
+				<label translate>SURVEY.FIVE_TO_TEN_MINUTES</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="qone" />
+				<label translate>SURVEY.TEN_TO_FIFTEEN_MINUTES</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="qone" />
+				<label translate>SURVEY.FIFTEEN_TO_TWENTY_MINUTES</label>
+			</div>
+		</div>
+	</div>
+	<div class="grouped fields">
+		<label for="qtwo" translate>SURVEY.QUESTION_TWO</label>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="qtwo" />
+				<label translate>SURVEY.TRUE</label>
+			</div>
+		</div>
+	</div>
+</form>
+-->

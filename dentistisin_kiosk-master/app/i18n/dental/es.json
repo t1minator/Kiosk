@@ -1,0 +1,59 @@
+{
+	"DENTAL": {
+		"HEADER": {
+			"TITLE": "Queja denta",
+			"SUBTEXT": ""
+		},
+		"PAIN": {
+			"LABEL": "Lo que duele?",
+			"PAIN": {
+				"PLACEHOLDER": "por ejemplo las encías, dientes, dientes, mandíbula",
+				"ERRORS": {
+					"HEADER": "Respuesta no válida",
+					"REQUIRED": "Debe proporcionarse una descripción de lo que duele",
+					"MAXLENGTH": "Por favor limite su descripción a menos de 250 personajes"
+				}
+			}
+			
+		},
+		"DURATION": {
+			"LABEL": "¿Cuánto tiempo se duele?",
+			"DURATION": {
+				"PLACEHOLDER": "por ejemplo, días, semanas, meses",
+				"ERRORS": {
+					"HEADER": "Respuesta no válida",
+					"REQUIRED": "Se requiere una descripción de cuánto tiempo han estado experimentando dolor",
+					"MAXLENGTH": "Por favor limite su descripción a menos de 250 personajes"
+				}
+			}
+		},
+		"SWELLING": {
+			"LABEL": "¿Tienes alguna hinchazón?",
+			"SWELLING": {
+				"PLACEHOLDER": "",
+				"OPTIONS": {
+					"Y": "Si",
+					"N": "No"
+				},
+				"ERRORS": {
+					"HEADER": "Respuesta no válida",
+					"REQUIRED": "Esta respuesta es necesaria"
+				}
+			}
+		},
+		"SEVERITY": {
+			"LABEL": "Cuánto me duele?",
+			"SEVERITY": {
+				"PLACEHOLDER": "1 uno que es el menos 10 que es el peor",
+				"ERRORS": {
+					"HEADER": "Respuesta no válida",
+					"REQUIRED": "La severidad del dolor es necesaria",
+					"PATTERN": "Se aceptan solamente 1-10"
+				}
+			}
+		},
+		"DESCRIBE": {
+			"LABEL": "El dentista le pedirá que describa su dolor."
+		}
+	}
+}

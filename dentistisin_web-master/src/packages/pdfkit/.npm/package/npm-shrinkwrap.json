@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "pdfkit": {
+      "version": "http://registry.npmjs.org/pdfkit/-/pdfkit-0.7.1.tgz",
+      "dependencies": {
+        "png-js": {
+          "version": "http://registry.npmjs.org/png-js/-/png-js-0.1.1.tgz"
+        },
+        "linebreak": {
+          "version": "http://registry.npmjs.org/linebreak/-/linebreak-0.1.2.tgz",
+          "dependencies": {
+            "unicode-trie": {
+              "version": "http://registry.npmjs.org/unicode-trie/-/unicode-trie-0.1.2.tgz"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,172 @@
+<template name="sessions">
+	<div class="ui page grid">
+		<div class="four wide column">
+			{{> _menu }}
+		</div>
+		<div class="twelve wide column">
+			{{> _session_table }}
+		</div>
+	</div>
+</template>
+
+<template name="_session_table">
+	<table class="ui sortable striped celled table">
+		{{> _session_table_header }}
+		{{> _session_table_body }}
+	</table>
+	{{#if loadMoreSessions}}
+		<a href="{{loadMoreSessions}}" class="ui right floated small right labeled green icon button">
+			<i class="down arrow icon"></i> Load More
+		</a>
+	{{else}}
+		{{#unless sessionsReady}}
+			<a class="ui loading right floated small right labeled green icon button">
+				<i class="down arrow icon"></i> Load More
+			</a>
+		{{/unless}}
+	{{/if}}
+</template>
+
+<template name="_session_table_header">
+	<thead>
+		<tr>
+			<th></th>
+			<th id="createdAtSort" class="{{sortState 'createdAt'}}"><!--<i class="calendar icon"></i> -->Creation Date</th>
+			<th id="locationSort" class="{{sortState 'location.name'}}"><!--<i class="building outline icon"></i> -->Location</th>
+			<th id="dentistSort" class="{{sortState 'dentist.username'}}"><!--<i class="doctor icon"></i> -->Dentist</th>
+			<th><!--<i class="info icon"></i> -->Status</th>
+		</tr>
+	</thead>
+</template>
+
+<template name="_session_table_body">
+	<tbody>
+		{{#if sessions}}
+			{{#each sessions}}
+				{{> _session_table_row }}
+			{{/each}}
+		{{else}}
+			{{#if sessionsReady}}
+				<tr class="full-width"><td colspan="5">No Results Found</td></tr>
+			{{else}}
+				<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+			{{/if}}
+		{{/if}}
+	</tbody>
+</template>
+
+<template name="_session_table_row">
+	<tr>
+		<td><a href="{{pathFor route='session.show' sessionId=_id}}"><i class="unhide icon"></i>Details<!--Full Report--></a></td>
+		<td>{{date createdAt}}</td>
+		{{#if location.name}}
+			<td><a href="{{pathFor route='location.show' locationId=location.id}}">{{location.name}}</a></td>
+		{{else}}
+			<td>Unknown</td>
+		{{/if}}
+		{{#if dentist.username}}
+			<td><a href="{{pathFor route='user.show' userId=dentist.id}}">{{dentist.username}}</a></td>
+		{{else}}
+			<td>Unassigned</td>
+		{{/if}}
+		<td>
+			<!--{{state}}-->
+			{{> Template.dynamic template=status }}
+		</td>
+	</tr>
+</template>
+
+<template name="_session_table_foot">
+	<tfoot class="full-width">
+		<tr>
+			<th colspan="5">
+				<div class="ui right floated small right labeled green icon button">
+					<i class="down arrow icon"></i> Load More
+				</div>
+			</th>
+		</tr>
+	</tfoot>
+</template>
+
+<template name="_menu">
+	<div class="ui attached message">
+		<i class="filter icon"></i>
+		<!-- <div class="content"> -->
+			Limit Results
+		<!-- </div> -->
+	</div>
+	<div class="ui attached form segment">
+		{{# if false}}
+		<div class="field">
+			<label>Search</label>
+			<div class="ui icon input">
+				<input type="text" placeholder="Patient name or e-mail">
+				<i class="search icon"></i>
+			</div>
+		</div>
+		{{/if}}
+		<div class="field">
+			<!-- <label>Location</label> -->
+			<!-- <select class="ui search dropdown"> -->
+			<!-- 	<option value="">Any</option> -->
+			<!-- 	{{#each this.locations}} -->
+			<!-- 		<option value="{{_id}}">{{name}}</option> -->
+			<!-- 	{{/each}} -->
+			<!-- </select> -->
+			{{> _location_filter }}
+		</div>
+		<div class="field">
+			<!-- <label>Dentist</label> -->
+			<!-- <select class="ui search dropdown"> -->
+			<!-- 	<option value="">Any</option> -->
+			<!-- 	{{#each this.dentists}} -->
+			<!-- 		<option value="{{_id}}">{{username}}</option> -->
+			<!-- 	{{/each}} -->
+			<!-- </select> -->
+			{{> _dentist_filter }}
+		</div>
+		<!-- <label>Date Range</label> -->
+		<div class="field">
+			<label>Date Range</label>
+			<div class="ui icon input">
+				<input id="dateStart" type="date" placeholder="Start" />
+				<i class="calendar icon"></i>
+			</div>
+		<!-- </div> -->
+		<!-- <div class="field"> -->
+			<div class="ui icon input">
+				<input id="dateEnd" type="date" placeholder="End" />
+				<i class="calendar icon"></i>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_location_filter">
+	<label>Location</label>
+	<div id="locationFilter" class="ui search selection dropdown">
+		<input type="hidden" name="locationFilter">
+		<i class="dropdown icon"></i>
+		<div class="default text">Any</div>
+		<div class="menu">
+			{{#each this.locations}}
+				<div class="item" data-value="{{_id}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</template>
+
+<template name="_dentist_filter">
+	<label>Dentist</label>
+	<div id="dentistFilter" class="ui selection dropdown">
+		<input type="hidden" name="dentistFilter">
+		<i class="dropdown icon"></i>
+		<div class="text">Any</div>
+		<div class="menu">
+		<div class="default item" data-value="">All Dentist</div>
+			{{#each this.dentists}}
+				<div class="item" data-value="{{_id}}">{{username}}</div>
+			{{/each}}
+		</div>
+	</div>
+</template>

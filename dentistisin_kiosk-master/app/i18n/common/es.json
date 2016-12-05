@@ -1,0 +1,16 @@
+{
+	"COMMON": {
+		"CONTINUE": "Continuar",
+		"NEXT": "Próxima",
+		"BACK": "Atrás",
+		"CANCELSESSION": "Cancel Session",
+		"TRUE": "True",
+		"FALSE": "False",
+		"NEVER": "Never",
+		"SUBMIT": "Presentar",
+		"YES": "Sí",
+		"NO": "No",
+		"INACTIVITY_ALERT": "Alerta de inactividad",
+		"INACTIVITY_MESSAGE": "La sesión caducará automáticamente en {{ timeRemaining }} segundos debido a la inactividad. Por favor, toque la pantalla para reanudar la sesión."
+	}
+}

@@ -1,0 +1,9 @@
+body {
+	margin: 0px;
+}
+.ui.sortable.table thead th{
+	cursor: inherit;
+}
+i.icon.unread:before{
+    content: "\f1f8";
+}

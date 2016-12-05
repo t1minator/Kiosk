@@ -1,0 +1,1 @@
+{"version":3,"sources":["pdfkit/pdfkit.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;AAAA,oC;;AAEA,2B;AACA,0C;AACA,mC;AACA,E","file":"/packages/pdfkit.js","sourcesContent":["PDFDocument = Npm.require('pdfkit');\n\nvar fs = Npm.require('fs');\nPDFDocument.writeStream = function(file) {\n\treturn fs.createWriteStream(file);\n};\n"]}

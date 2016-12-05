@@ -1,0 +1,33 @@
+<template name="layout">
+	{{> nav}}
+	<!-- <div class="ui page grid"> -->
+	<!--	<div class="sixteen wide column"> -->
+			<!-- {{> queue }} -->
+	{{loggingIn}}
+	{{#if Meteor.loggingIn}}
+		<div class="ui active dimmer"><div class="ui loader"></div></div>
+	{{/if}}
+			{{> yield }}
+	<!--	</div> -->
+	<!-- </div> -->
+	<!-- {{> loginButtons}} -->
+	<div class="ui small basic modal">
+		<div class="header">
+			Inactivity Alert
+		</div>
+		<div class="content">
+			<div class="image">
+				<i class="warning icon"></i>
+			</div>
+			<div class="description">
+				<p>Your connection will timeout in 5 minutes.</p>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui inverted red basic cancel button">
+				<i class="remove icon"></i>
+				Cancel
+			</div>
+		</div>
+	</div>
+</template>

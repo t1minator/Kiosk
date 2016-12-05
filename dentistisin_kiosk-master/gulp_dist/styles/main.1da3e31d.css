@@ -1,0 +1,98 @@
+/* Shouldn't do this here at all */
+html {
+	font-size: 100%;
+}
+
+.ui.form input:not([type]):focus, .ui.form input[type=date]:focus, .ui.form input[type=datetime-local]:focus, .ui.form input[type=email]:focus, .ui.form input[type=numer]:focus, .ui.form input[type=password]:focus, .ui.form input[type=tel]:focus, .ui.form input[type=text]:focus, .ui.form input[type=time]:focus, .ui.form input[type=url]:focus {
+	border-color: rgba(63, 63, 63, 0.85);
+	border-radius: 0 .5rem .5rem 0;
+	box-shadow: 1px 0 0 0 rgba(63, 63, 63, 0.85)inset;
+}
+
+#languageSelect {
+	background: url('../images/Log-Kiosk.jpg') no-repeat center;
+}
+
+#hipaa {
+	max-height: 40vh;
+	overflow: auto;
+}
+
+#hipaa h4 {
+	margin-bottom: 0px;
+}
+
+/* line 1, ../sass/main.scss */
+.ka-nfh {
+  min-height: 90vh;
+}
+
+/* line 5, ../sass/main.scss */
+.ui.selection.dropdown > .checkmark.icon,
+.ui.selection.dropdown > .warning.icon {
+  position: absolute;
+  top: auto;
+  margin: 0em;
+  width: auto;
+  right: 1.1em;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* line 16, ../sass/main.scss */
+#webview-container {
+  background-color: black;
+  width: 100vw;
+  height: calc(100vh - 39px);
+  margin: 0px;
+  padding: 0px;
+  border: 0px none transparent;
+}
+
+/* line 25, ../sass/main.scss */
+#sightcall-webview {
+  width: 100%;
+  height: 100%;
+}
+
+/**
+.ka-sc-test {
+	background-color: balck;
+	border: 0px none transparent;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	width: 640px;
+	height: 480px;
+	@media only screen and (width: 1280px) and (height: 800px) {
+		height: 720px;
+		width: 1280px;
+		padding-top: 21px;
+		padding-bottom: 20px;
+	}
+}
+
+webview {
+	background-color: transparent;
+	border: 0px none transparent;
+	padding: 0px;
+	overflow: hidden;
+}
+
+webview.ka-sc {
+	height: 90px;
+	width: 160px;
+	@media only screen and (min-width: 320px) and (max-width: 639px) {
+		height: 180px;
+		width: 320px;
+	}
+	@media only screen and (min-width: 640px) and (max-width: 1279px) {
+		height: 360px;
+		width: 640px;
+	}
+	@media only screen and (min-width: 1280px) {
+		height: 720px;
+		width: 1280px;
+	}
+}
+**/

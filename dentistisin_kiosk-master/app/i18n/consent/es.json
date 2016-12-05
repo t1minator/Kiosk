@@ -1,0 +1,32 @@
+{
+	"HEADER": {
+		"TITLE": "Autorización para recibir Servicios o Consulta de Telemedicine"
+	},
+	"H1": "Introducción",
+	"P1": "Telemedicine involucra el uso de comunicación electrónica para acercar a los proveedores del cuidado de la salud ubicados en diferentes lugares, para compartir información médica de un paciente con el objetivo de mejorar su atención. Los proveedores pueden incluir médicos generales, especialistas o subespecialistas. La información podrá ser usada para diagnóstico, terapia, seguimiento y/o educación, y podrá incluir cualquiera de los siguientes conceptos:",
+	"I11": "Historia clínica del paciente",
+	"I12": "Imágenes médicas",
+	"I13": "Audio y video en vivo",
+	"I14": "Información producida por dispositivos médicos y archivos de audio y video",
+	"P2": "Los sistemas electrónicos utilizados contendrán protocolos de seguridad para proteger la confidencialidad del paciente y sus imágenes, así como incluir medidas para salvaguardar la información y cuidar su integridad en contra de cualquier daño, con o sin intención.",
+	"H2": "Beneficios:",
+	"I21": "Mejorar el acceso a la asistencia médica, permitiéndole al paciente dirigirse a un sitio remoto mientras el dentista consulta con otros médicos que se encuentran en distintos lugares.",
+	"I22": "Evaluación y manejo médico eficiente",
+	"I23": "Obtener asesoría de especialistas a distancia",
+	"H3": "Riesgos:",
+	"I31": "En contadas ocasiones, la información transmitida puede ser insuficiente (e.g. mala calidad de las imágenes) y derivar en una mala decisión de la enfermera o el médico;",
+	"I32": "Podría ocurrir algún retraso en la evaluación y tratamiento médico debido a fallas o deficiencias del equipo;",
+	"I33": "Rara vez pueden fallar los protocolos de seguridad, causando una violación a la información privada de los pacientes;",
+	"I34": "En algunas ocasiones, por falta de acceso a la historia clínica completa, podría haber errores en la prescripción de fármacos y causar reacciones alérgicas o algún otro error;",
+	"H4": "Al firmar esta forma entiendo lo siguiente:",
+	"I41": "Entiendo que las leyes que protegen la privacidad y confidencialidad de la información médica también aplican para Telemedicine y que ninguna información de Telemedicine que me identifique podrá ser divulgada a los investigadores u otras agencias sin mi consentimiento.",
+	"I42": "Entiendo que tengo derecho de otorgar o no mi consentimiento al uso de Telemedicine durante mi atención medica en cualquier momento, sin que eso afecte mi derecho a obtener atención o tratamiento en el futuro.",
+	"I43": "Entiendo que tengo derecho a examinar toda la información obtenida y grabada durante la interacción con Telemedicine y puedo obtener copias de esta a un costo razonable.",
+	"I44": "Entiendo que hay una variedad de métodos accesibles para mí y que puedo escoger uno o varios en cualquier momento. La enfermera me ha explicado las opciones a mi entera satisfacción. ",
+	"I45": "Entiendo que Telemedicine puede enviar mi información médica por medios electrónicos a otros profesionales que pueden localizarse en diferentes áreas, incluso fuera del estado.",
+	"I46": "Entiendo que es mi obligación informar a mi doctor sobre interacciones electrónicas que haya tenido en el pasado con otros doctores, relacionadas con mi salud/cuidado.",
+	"I47": "Entiendo que espero beneficios anticipados en mi salud por el uso de Telemedicine, pero ningún resultado puede garantizarse o asegurarse.",
+	"H5": "Consentimiento del Paciente para el uso de Telemedicine",
+	"P3": "He leído y entendido la información arriba mencionada respecto a Telemedicine. La he revisado con la enfermera o los asistentes designados y todas mis preguntas han sido respondidas a mi entera satisfacción. Doy mi consentimiento a Telemedicine para mi cuidado médico.",
+	"P4": "Doy mi autorización a The Dentist Is In (consultor) para utilizar Telemedicine durante mis consultas dentales."
+}

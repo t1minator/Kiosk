@@ -1,0 +1,1 @@
+JWT = Npm.require('jsonwebtoken');

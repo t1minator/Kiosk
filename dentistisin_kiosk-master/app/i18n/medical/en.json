@@ -1,0 +1,79 @@
+{
+	"MEDICAL": {
+		"HEADER": {
+			"TITLE": "Medical Information",
+			"SUBTEXT": "Although dentists primarily treat the area in and around your mouth, your mouth is a vital part of your total health. Health problems that you may have, or medications that you may be taking, could have an important interrelationship with your oral health. Please answer by tapping the relevant conditions."
+		},
+		"CONDITIONS": {
+			"LABEL": "Medical Conditions",
+			"HIV_AIDS": {
+				"LABEL": "HIV/AIDS"
+			},
+			"PREGNANT": {
+				"LABEL": "Pregnant/Trying to get Pregnant"
+			},
+			"CONTRACEPTIVES": {
+				"LABEL": "Taking Contraceptives"
+			},
+			"CANCER": {
+				"LABEL": "Cancer"
+			},
+			"DIABETES": {
+				"LABEL": "Diabetes"
+			},
+			"HEART": {
+				"LABEL": "Heart Condition"
+			},
+			"BLOOD": {
+				"LABEL": "Blood Pressure Issues"
+			},
+			"KIDNEY_LIVER": {
+				"LABEL": "Kidney or Liver Issues"
+			},
+			"STOMACH": {
+				"LABEL": "Stomach Problems"
+			},
+			"BLEEDING": {
+				"LABEL": "Bleeding Problems"
+			},
+			"PSYCHIATRIC": {
+				"LABEL": "Psychiatric Care"
+			},
+			"RADIATION": {
+				"LABEL": "Radiation Treatment to the Head and Neck"
+			}
+		},
+		"MEDICATIONS": {
+			"LABEL": "Current Medications",
+			"MEDICATIONS": {
+				"PLACEHOLDER": "Current Medications...",
+				"ERRORS": {
+					"HEADER": "Invalid medication list",
+					"MAXLENGTH": "Please limit your response to less than 1,000 characters"
+				}
+			}
+		},
+		"ALLERGIES": {
+			"LABEL": "Allergies",
+			"ASPIRIN": {
+				"LABEL": "Aspirin"
+			},
+			"CODEINE": {
+				"LABEL": "Codeine"
+			},
+			"PENICILLIN": {
+				"LABEL": "Penicillin"
+			},
+			"SULFA": {
+				"LABEL": "Sulfa Drugs"
+			},
+			"OTHER": {
+				"PLACEHOLDER": "Other...",
+				"ERRORS": {
+					"HEADER": "Invalid allergies list",
+					"MAXLENGTH": "Please limit your response to less than 1,000 characters"
+				}
+			}
+		}
+	}
+}

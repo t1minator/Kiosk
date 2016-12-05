@@ -1,0 +1,24 @@
+{
+	"HEADER": {
+		"TITLE": "Please enter access code, then check the two boxes",
+		"SUBTEXT": "If you do not have an access code please see the receptionist to find out how to obtain one."
+	},
+	"CODE": {
+		"LABEL": "Code",
+		"CODE": {
+			"PLACEHOLDER": "Code...",
+			"ERRORS": {
+				"HEADER": "Invalid access code",
+				"MAXLENGTH": "An access code is less than 20 digits",
+				"PATTERN": "An access code can only contain the digits 0-9",
+				"REJECTED": "The access code that was entered is invalid. Please make sure it was entered properly.",
+				"REQUIRED": "No access code was entered. An access code is required to continue."
+			}
+		}
+	},
+	"ACCEPT": "I understand and accept ",
+	"PRIVACY": "The Notice of Privacy Practices",
+	"CONSENT": "Informed Consent for Telemedicine Consultation",
+	"CONTINUE": "Continue",
+	"BACK": "Back"
+}

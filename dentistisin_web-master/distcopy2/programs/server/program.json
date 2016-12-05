@@ -1,0 +1,547 @@
+{
+  "format": "javascript-image-pre1",
+  "arch": "os.osx.x86_64",
+  "load": [
+    {
+      "sourceMap": "packages/underscore.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/underscore.js"
+    },
+    {
+      "node_modules": "npm/meteor/node_modules",
+      "sourceMap": "packages/meteor.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/meteor.js"
+    },
+    {
+      "sourceMap": "packages/reload.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/reload.js"
+    },
+    {
+      "sourceMap": "packages/json.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/json.js"
+    },
+    {
+      "sourceMap": "packages/base64.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/base64.js"
+    },
+    {
+      "sourceMap": "packages/ejson.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/ejson.js"
+    },
+    {
+      "node_modules": "npm/logging/node_modules",
+      "sourceMap": "packages/logging.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/logging.js"
+    },
+    {
+      "sourceMap": "packages/routepolicy.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/routepolicy.js"
+    },
+    {
+      "sourceMap": "packages/tracker.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/tracker.js"
+    },
+    {
+      "sourceMap": "packages/deps.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/deps.js"
+    },
+    {
+      "sourceMap": "packages/htmljs.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/htmljs.js"
+    },
+    {
+      "sourceMap": "packages/html-tools.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/html-tools.js"
+    },
+    {
+      "sourceMap": "packages/blaze-tools.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/blaze-tools.js"
+    },
+    {
+      "sourceMap": "packages/spacebars-compiler.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/spacebars-compiler.js"
+    },
+    {
+      "sourceMap": "packages/jquery.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/jquery.js"
+    },
+    {
+      "sourceMap": "packages/id-map.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/id-map.js"
+    },
+    {
+      "sourceMap": "packages/ordered-dict.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/ordered-dict.js"
+    },
+    {
+      "sourceMap": "packages/random.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/random.js"
+    },
+    {
+      "sourceMap": "packages/geojson-utils.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/geojson-utils.js"
+    },
+    {
+      "sourceMap": "packages/minimongo.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/minimongo.js"
+    },
+    {
+      "sourceMap": "packages/observe-sequence.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/observe-sequence.js"
+    },
+    {
+      "sourceMap": "packages/reactive-var.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/reactive-var.js"
+    },
+    {
+      "sourceMap": "packages/blaze.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/blaze.js"
+    },
+    {
+      "sourceMap": "packages/templating.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/templating.js"
+    },
+    {
+      "sourceMap": "packages/spacebars.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/spacebars.js"
+    },
+    {
+      "sourceMap": "packages/ui.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/ui.js"
+    },
+    {
+      "sourceMap": "packages/boilerplate-generator.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/boilerplate-generator.js",
+      "assets": {
+        "boilerplate_web.browser.html": "assets/packages/boilerplate-generator/boilerplate_web.browser.html",
+        "boilerplate_web.cordova.html": "assets/packages/boilerplate-generator/boilerplate_web.cordova.html"
+      }
+    },
+    {
+      "sourceMap": "packages/webapp-hashing.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/webapp-hashing.js"
+    },
+    {
+      "node_modules": "npm/webapp/node_modules",
+      "sourceMap": "packages/webapp.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/webapp.js"
+    },
+    {
+      "sourceMap": "packages/check.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/check.js"
+    },
+    {
+      "sourceMap": "packages/retry.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/retry.js"
+    },
+    {
+      "sourceMap": "packages/audit-argument-checks.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/audit-argument-checks.js"
+    },
+    {
+      "sourceMap": "packages/callback-hook.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/callback-hook.js"
+    },
+    {
+      "node_modules": "npm/ddp/node_modules",
+      "sourceMap": "packages/ddp.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/ddp.js"
+    },
+    {
+      "sourceMap": "packages/binary-heap.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/binary-heap.js"
+    },
+    {
+      "node_modules": "npm/mongo/node_modules",
+      "sourceMap": "packages/mongo.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/mongo.js"
+    },
+    {
+      "sourceMap": "packages/autoupdate.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/autoupdate.js"
+    },
+    {
+      "sourceMap": "packages/meteor-platform.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/meteor-platform.js"
+    },
+    {
+      "sourceMap": "packages/iron_core.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_core.js"
+    },
+    {
+      "sourceMap": "packages/iron_dynamic-template.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_dynamic-template.js",
+      "assets": {
+        "dynamic_template.html": "assets/packages/iron_dynamic-template/dynamic_template.html"
+      }
+    },
+    {
+      "sourceMap": "packages/iron_layout.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_layout.js",
+      "assets": {
+        "default_layout.html": "assets/packages/iron_layout/default_layout.html"
+      }
+    },
+    {
+      "sourceMap": "packages/iron_url.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_url.js"
+    },
+    {
+      "sourceMap": "packages/iron_middleware-stack.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_middleware-stack.js"
+    },
+    {
+      "sourceMap": "packages/iron_location.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_location.js"
+    },
+    {
+      "sourceMap": "packages/reactive-dict.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/reactive-dict.js"
+    },
+    {
+      "sourceMap": "packages/iron_controller.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_controller.js"
+    },
+    {
+      "node_modules": "npm/iron_router/node_modules",
+      "sourceMap": "packages/iron_router.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/iron_router.js",
+      "assets": {
+        "lib/templates.html": "assets/packages/iron_router/lib/templates.html"
+      }
+    },
+    {
+      "node_modules": "npm/aldeed_simple-schema/node_modules",
+      "sourceMap": "packages/aldeed_simple-schema.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/aldeed_simple-schema.js"
+    },
+    {
+      "sourceMap": "packages/aldeed_collection2.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/aldeed_collection2.js"
+    },
+    {
+      "sourceMap": "packages/aldeed_autoform.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/aldeed_autoform.js"
+    },
+    {
+      "sourceMap": "packages/mquandalle_stylus.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/mquandalle_stylus.js"
+    },
+    {
+      "sourceMap": "packages/mquandalle_jade.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/mquandalle_jade.js"
+    },
+    {
+      "sourceMap": "packages/url.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/url.js"
+    },
+    {
+      "node_modules": "npm/dandv_http-more/node_modules",
+      "sourceMap": "packages/dandv_http-more.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/dandv_http-more.js"
+    },
+    {
+      "sourceMap": "packages/sightcall.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/sightcall.js"
+    },
+    {
+      "node_modules": "npm/npm-bcrypt/node_modules",
+      "sourceMap": "packages/npm-bcrypt.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/npm-bcrypt.js"
+    },
+    {
+      "sourceMap": "packages/accounts-base.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/accounts-base.js"
+    },
+    {
+      "sourceMap": "packages/sha.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/sha.js"
+    },
+    {
+      "sourceMap": "packages/srp.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/srp.js"
+    },
+    {
+      "node_modules": "npm/email/node_modules",
+      "sourceMap": "packages/email.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/email.js"
+    },
+    {
+      "sourceMap": "packages/accounts-password.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/accounts-password.js"
+    },
+    {
+      "node_modules": "npm/http/node_modules",
+      "sourceMap": "packages/http.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/http.js"
+    },
+    {
+      "sourceMap": "packages/truevault.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/truevault.js"
+    },
+    {
+      "sourceMap": "packages/mongo-livedata.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/mongo-livedata.js"
+    },
+    {
+      "sourceMap": "packages/meteorhacks_collection-utils.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/meteorhacks_collection-utils.js"
+    },
+    {
+      "sourceMap": "packages/meteorhacks_aggregate.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/meteorhacks_aggregate.js"
+    },
+    {
+      "node_modules": "npm/jwt/node_modules",
+      "sourceMap": "packages/jwt.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/jwt.js"
+    },
+    {
+      "sourceMap": "packages/fongandrew_find-and-modify.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/fongandrew_find-and-modify.js"
+    },
+    {
+      "node_modules": "npm/uuid/node_modules",
+      "sourceMap": "packages/uuid.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/uuid.js"
+    },
+    {
+      "sourceMap": "packages/coffeescript.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/coffeescript.js"
+    },
+    {
+      "sourceMap": "packages/underscorestring_underscore.string.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/underscorestring_underscore.string.js"
+    },
+    {
+      "sourceMap": "packages/zimme_iron-router-active.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/zimme_iron-router-active.js"
+    },
+    {
+      "sourceMap": "packages/alanning_roles.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/alanning_roles.js"
+    },
+    {
+      "sourceMap": "packages/momentjs_moment.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/momentjs_moment.js"
+    },
+    {
+      "sourceMap": "packages/semantic_ui-css.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/semantic_ui-css.js"
+    },
+    {
+      "sourceMap": "packages/templates_tabs.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/templates_tabs.js"
+    },
+    {
+      "node_modules": "npm/pdfkit/node_modules",
+      "sourceMap": "packages/pdfkit.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/pdfkit.js"
+    },
+    {
+      "sourceMap": "packages/reywood_publish-composite.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/reywood_publish-composite.js"
+    },
+    {
+      "sourceMap": "packages/sfax.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/sfax.js"
+    },
+    {
+      "sourceMap": "packages/tmeasday_publish-counts.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/tmeasday_publish-counts.js"
+    },
+    {
+      "sourceMap": "packages/mizzao_timesync.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/mizzao_timesync.js"
+    },
+    {
+      "sourceMap": "packages/mizzao_user-status.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/mizzao_user-status.js"
+    },
+    {
+      "node_modules": "npm/percolate_synced-cron/node_modules",
+      "sourceMap": "packages/percolate_synced-cron.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/percolate_synced-cron.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-es.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/rzymek_moment-locale-es.js"
+    },
+    {
+      "sourceMap": "packages/sessions.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/sessions.js"
+    },
+    {
+      "sourceMap": "packages/locations.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/locations.js"
+    },
+    {
+      "sourceMap": "packages/zimme_iron-router-auth.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/zimme_iron-router-auth.js"
+    },
+    {
+      "sourceMap": "packages/fabienb4_autoform-semantic-ui.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/fabienb4_autoform-semantic-ui.js"
+    },
+    {
+      "sourceMap": "packages/kiosk-interface.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/kiosk-interface.js"
+    },
+    {
+      "node_modules": "npm/users/node_modules",
+      "sourceMap": "packages/users.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/users.js"
+    },
+    {
+      "sourceMap": "packages/browser-policy-common.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/browser-policy-common.js"
+    },
+    {
+      "sourceMap": "packages/browser-policy-content.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/browser-policy-content.js"
+    },
+    {
+      "sourceMap": "packages/browser-policy-framing.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/browser-policy-framing.js"
+    },
+    {
+      "sourceMap": "packages/browser-policy.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/browser-policy.js"
+    },
+    {
+      "sourceMap": "packages/session.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/session.js"
+    },
+    {
+      "sourceMap": "packages/livedata.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/livedata.js"
+    },
+    {
+      "path": "packages/global-imports.js"
+    },
+    {
+      "path": "app/lib/router.js",
+      "assets": {
+        "blah.bak": "assets/app/blah.bak",
+        "settings.json": "assets/app/settings.json",
+        "tvpolicies.json": "assets/app/tvpolicies.json",
+        "certs/sightcall_authCA.crt": "assets/app/certs/sightcall_authCA.crt",
+        "certs/sightcall_client.p12": "assets/app/certs/sightcall_client.p12",
+        "certs/sightcall_private_key.pem": "assets/app/certs/sightcall_private_key.pem",
+        "certs/sightcall_public_cert.pem": "assets/app/certs/sightcall_public_cert.pem"
+      }
+    },
+    {
+      "path": "app/server/startup.js",
+      "assets": {
+        "blah.bak": "assets/app/blah.bak",
+        "settings.json": "assets/app/settings.json",
+        "tvpolicies.json": "assets/app/tvpolicies.json",
+        "certs/sightcall_authCA.crt": "assets/app/certs/sightcall_authCA.crt",
+        "certs/sightcall_client.p12": "assets/app/certs/sightcall_client.p12",
+        "certs/sightcall_private_key.pem": "assets/app/certs/sightcall_private_key.pem",
+        "certs/sightcall_public_cert.pem": "assets/app/certs/sightcall_public_cert.pem"
+      }
+    },
+    {
+      "sourceMap": "packages/service-configuration.js.map",
+      "sourceMapRoot": "packages",
+      "path": "packages/service-configuration.js"
+    }
+  ]
+}

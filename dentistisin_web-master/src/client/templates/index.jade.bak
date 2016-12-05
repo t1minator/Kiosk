@@ -1,0 +1,5 @@
+head
+	title The Dentist is In
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	link(href='//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css', rel='stylesheet')
+	script(src='//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js')

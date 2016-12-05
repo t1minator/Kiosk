@@ -1,0 +1,42 @@
+{
+	"kiosk": [
+		{
+			"Resources": [
+				"Vault::.*::Document::.*"
+			],
+			"Activities": "C"
+		}
+	],
+	"dentist": [
+		{
+			"Resources": [
+				"Vault::.*::Document::.*"
+			],
+			"Activities": "CR"
+		}
+	],
+	"ta": [
+		{
+			"Resources": [
+				"User::.*",
+				"Group::.*"
+			],
+			"Activities": "CRUA"
+		}
+	],
+	"ma": [
+		{
+			"Resources": [
+				"Vault::.*::Document::.*"
+			],
+			"Activities": "CRUA"
+		},
+		{
+			"Resources": [
+				"User::.*",
+				"Group::.*"
+			],
+			"Activities": "CRUA"
+		}
+	]
+}

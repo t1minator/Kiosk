@@ -1,0 +1,136 @@
+<template name="session_voip">
+	<div class="ui page grid">
+		<div class="six wide column">
+			<!-- {{> patient_form }} -->
+			{{#session_voip_tabs tabs=tabs activeTab=activeTab}}
+				{{#tabContent slug="patient_info"}}
+					{{> patient_info_form ../patient}}
+				{{/tabContent}}
+				{{#tabContent slug="dentist_notes"}}
+					{{> dentist_notes_form ..}}
+				{{/tabContent}}
+			{{/session_voip_tabs}}
+		</div>
+		<div class="ten wide column">
+			<div class="message-connection" style="display: none;position: relative; margin-bottom: 20px;">
+				<p>If patient connection is disconnected, please try the call.</p>
+				<a href="#" id="tryCallToPatient">Call to patient</a>
+			</div>
+			<div id="video-container" style="position: relative"></div>
+			
+		</div>
+	</div>
+</template>
+
+<template name="session_voip_tabs">
+	<div class="ui top attached tabular menu">
+		{{#if activeTab}}
+			{{trackActiveTab activeTab}}
+		{{/if}}
+
+		{{trackTabs tabs}}
+
+		{{#each tabs}}
+			<a class="tab-item {{isActiveTab slug}} item">{{name}}</a>
+		{{/each}}
+	</div>
+	<div class="ui bottom attached fluid form segment">
+		<div class="tabs-content-container">
+			{{> UI.contentBlock
+			    context=__context__
+			}}
+		</div>
+	</div>
+</template>
+
+<template name="patient_info">
+	{{#if language}}
+		<div class="ui horizontal divider">Language</div>
+		{{language}}
+	{{/if}}
+	{{#with form}}
+		<div class="ui horizontal divider">Name</div>
+		{{name}}
+		<div class="ui horizontal divider">Address</div>
+		{{patientAddressOne}} <br/>
+		{{#if patientAddressTwo}}
+			{{patientAddressTwo}} <br/>
+		{{/if}}
+		{{patientAddressCity}}, {{patientAddressState}} {{patientAddressZip}} <br/>
+		<div class="ui horizontal divider">Contact</div>
+		<div class="inline field"><label>E-mail: </label> {{patientContactEmail}} </div>
+		<div class="inline field"><label>Phone: </label> {{patientContactPhone}} </div>
+		<div class="ui horizontal divider">Date of Birth</div>
+		{{dob}}
+		<div class="ui horizontal divider">Sex</div>
+		{{sex}}
+		<div class="ui horizontal divider">Payment Method</div>
+		{{payment patientInsuranceInsurance}}
+		<div class="ui horizontal divider">Medical Conditions</div>
+		{{conditions}}
+		<div class="ui horizontal divider">Current Medications</div>
+		{{medications}}
+		<div class="ui horizontal divider">Allergies</div>
+		{{allergies}}
+		<div class="ui horizontal divider">Dental Complaint</div>
+		<div class="inline field">
+			<label>Area of Pain: </label>
+			{{dentalPain}}
+		</div>
+		<div class="inline field">
+			<label>Duration of Pain: </label>
+			{{dentalDuration}}
+		</div>
+		<div class="inline field">
+			<label>Swelling Present: </label>
+			{{swelling}}
+		</div>
+		<div class="inline field">
+			<label>Severity of Pain (1-10): </label>
+			{{dentalSeverity}}
+		</div>
+	{{/with}}
+</template>
+
+<template name="patient_info_form">
+	{{> patient_info }}
+	{{#if callActive}}
+	{{else}}
+		<div class="ui divider"></div>
+		<div class="ui checkbox">
+			<input type="checkbox" name="readAll">
+			<label>I have reviewed all submitted patient information</label>
+		</div>
+		<div class="ui hidden divider"></div>
+		<a id="callPatient" class="ui small green right labeled icon button {{readAll}} {{scReady}}">
+			<i class="call icon"></i>
+			Call Patient
+		</a>
+	{{/if}}
+	
+</template>
+
+<template name="dentist_notes_form">
+		<a target="_blank" href="https://www.zocdoc.com">Make an appointment...</a>
+		{{#autoForm schema="Sessions.schemas.dentistNotes" meteormethod="createDentistNotes" id="createDentistNotes" type="method"}}
+			{{> afQuickField name="clinicalImpression" template="din" rows=4}}
+			{{> afQuickField name="recommendation" template="din" rows=4}}
+			{{> afQuickField name="recommendedPrescriptions" template="din" rows=4}}
+			{{#if callActive}}
+				{{> _end_call }}
+			{{else}}
+			{{/if}}
+		{{/autoForm}}
+</template>
+
+<template name="_end_call">
+	<div class="ui checkbox">
+		<input type="checkbox" name="canSubmit">
+		<label>I have reviewed all patient data and made my recommendations</label>
+	</div>
+	<div class="ui hidden divider"></div>
+	<button type="submit" class="ui small green right labeled icon submit button {{canSubmit}}">
+		<i class="upload icon"></i>
+		Submit and End Call
+	</button>
+</template>

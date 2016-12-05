@@ -1,0 +1,60 @@
+{
+	"DENTAL": {
+		"HEADER": {
+			"TITLE": "Dental Complaint",
+			"SUBTEXT": ""
+		},
+		"PAIN": {
+			"LABEL": "What hurts?",
+			"PAIN": {
+				"PLACEHOLDER": "e.g. gums, teeth, tooth, jaw",
+				"ERRORS": {
+					"HEADER": "Invalid response",
+					"REQUIRED": "A description of what hurts must be provided",
+					"MAXLENGTH": "Please limit your description to less than 250 characters"
+				}
+			}
+			
+		},
+		"DURATION": {
+			"LABEL": "How long has it hurt?",
+			"DURATION": {
+				"PLACEHOLDER": "e.g. days, weeks, months",
+				"ERRORS": {
+					"HEADER": "Invalid response",
+					"REQUIRED": "A description of how long you have been experiencing pain is required",
+					"MAXLENGTH": "Please limit your description to less than 250 characters"
+				}
+			}
+		},
+		"SWELLING": {
+			"LABEL": "Do you have any swelling?",
+			"SWELLING": {
+				"PLACEHOLDER": "",
+				"OPTIONS": {
+					"Y": "Yes",
+					"N": "No"
+				},
+				"ERRORS": {
+					"HEADER": "Invalid response",
+					"REQUIRED": "This response is required"
+				}
+			}
+		},
+		"SEVERITY": {
+			"LABEL": "How badly does it hurt?",
+			"SEVERITY": {
+				"PLACEHOLDER": "1 being least and 10 being worst",
+				"ERRORS": {
+					"HEADER": "Invalid response",
+					"REQUIRED": "The severity of your pain is required",
+					"PATTERN": "Only 1-10 are accepted"
+				}
+			}
+		},
+		"DESCRIBE": {
+			"LABEL": "The dentist will ask you to describe your pain."
+		}
+	}
+}
+

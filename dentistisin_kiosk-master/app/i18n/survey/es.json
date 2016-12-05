@@ -1,0 +1,46 @@
+{
+	"SURVEY": {
+		"HEADER": {
+			"TITLE": "Encuesta",
+			"SUBTEXT": "Por favor dénos su opinión"
+		},
+		"WAIT_TIME": {
+			"LABEL": "Era mi tiempo de espera para ser visto por un dentista",
+			"OPTIONS": {
+				"FIVE_MINUTES": "1-5 minutos",
+				"TEN_MINUTES": "5-10 minutos",
+				"FIFTEEN_MINUTES": "10-15 minutos",
+				"TWENTY_MINUTES": "15-20 minutos" 
+			}
+		},
+		"UNDERSTANDING": {
+			"LABEL": "El dentista comprendido mi problema y respondió a mis preguntas",
+			"OPTIONS": {
+				"T": "Verdad",
+				"F": "Falso"
+			}
+		},
+		"TREATMENT": {
+			"LABEL": "Te daré mi tratamiento realizado en la instalación recomendada dentro de",
+			"OPTIONS": {
+				"THREE_DAYS": "1-3 dias",
+				"FIVE_DAYS": "3-5 dias",
+				"NEVER": "Nunca"
+			}
+		},
+		"PLEASED": {
+			"LABEL": "Me quedé contento con mi experiencia con los que me ayudó hoy",
+			"OPTIONS": {
+				"T": "Verdad",
+				"F": "Falso"
+			}
+		},
+		"REFER": {
+			"LABEL": "Me remito a mis amigos aquí para el cuidado",
+			"OPTIONS": {
+				"T": "Verdad",
+				"F": "Falso"
+			}
+		}
+	}
+}

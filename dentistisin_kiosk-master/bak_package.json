@@ -1,0 +1,50 @@
+{
+  "name": "dinka",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "event-stream": "^3.3.0",
+    "gulp": "^3.8.11",
+    "gulp-angular-htmlify": "^2.1.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.2.2",
+    "gulp-htmlmin": "^1.1.1",
+    "gulp-jshint": "^1.9.2",
+    "gulp-json-lint": "^0.1.0",
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "js-string-escape": "^1.0.0",
+    "jshint-stylish": "^2.0.1",
+    "through2": "^0.6.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "description": "Dentist Is In Kiosk Application",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/augie09/dentistisin_kiosk.git"
+  },
+  "keywords": [
+    "dentist",
+    "meteor",
+    "es6",
+    "chrome",
+    "plugin",
+    "webrtc"
+  ],
+  "author": "Nathaniel Inman",
+  "license": "Copyright 2015 All Rights Reserved",
+  "bugs": {
+    "url": "https://github.com/augie09/dentistisin_kiosk/issues"
+  },
+  "homepage": "https://github.com/augie09/dentistisin_kiosk"
+}

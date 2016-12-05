@@ -1,0 +1,24 @@
+{
+	"HEADER": {
+		"TITLE": "Por favor lea el siguiente aviso de privacidad e introduzca el código de acceso.",
+		"SUBTEXT": "Si no tienes un código de acceso por favor vea la recepcionista para averiguar cómo obtener uno."
+	},
+	"CODE": {
+		"LABEL": "Código",
+		"CODE": {
+			"PLACEHOLDER": "Código...",
+			"ERRORS": {
+				"HEADER": "Código de acceso válido",
+				"MAXLENGTH": "Un código de acceso es menos de 20 dígitos",
+				"PATTERN": "Un código de acceso sólo puede contener los dígitos",
+				"REJECTED": "El código de acceso que se ha introducido no es válido. Por favor, asegúrese de que se introdujo correctamente",
+				"REQUIRED": "No se ha firmado ningún código de acceso. Un código de acceso es necesaria para continuar"
+			}
+		}
+	},
+	"ACCEPT": "Entiendo y acepto ",
+	"PRIVACY": "El aviso de prácticas de privacidad",
+	"CONSENT": "Consentimiento informado para consultas de telemedicina",
+	"CONTINUE": "Continuar",
+	"BACK": "Atrás"
+}

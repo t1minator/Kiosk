@@ -1,0 +1,8 @@
+{
+	"name": "din.wa",
+	"version": "1.0.0",
+	"dependencies": {
+		"owasp-password-strength-test": "1.2.2"
+	},
+	"private": true
+}

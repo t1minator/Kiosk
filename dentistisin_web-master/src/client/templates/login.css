@@ -1,0 +1,12 @@
+.ka-top {
+	margin-top: 2em !important;
+}
+
+#forgotPasswordLink {
+	float: left;
+}
+
+/* Thanks SemanticUI for doing display: none */
+.ui.icon.success.message {
+	display: block;
+}

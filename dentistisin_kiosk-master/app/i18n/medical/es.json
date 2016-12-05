@@ -1,0 +1,79 @@
+{
+	"MEDICAL": {
+		"HEADER": {
+			"TITLE": "Información médica",
+			"SUBTEXT": "Aunque los dentistas tratan principalmente el área en y alrededor de la boca, la boca es una parte vital de su salud total.  Problemas de salud que usted puede tener, o los medicamentos que usted puede estar tomando, podrían tener una importante relación con su salud oral. Gracias por contestar las siguientes preguntas."
+		},
+		"CONDITIONS": {
+			"LABEL": "Condiciones médicas",
+			"HIV_AIDS": {
+				"LABEL": "SIDA/HIV Positivo"
+			},
+			"PREGNANT": {
+				"LABEL": "Embarazada/tratando de quedar embarazada"
+			},
+			"CONTRACEPTIVES": {
+				"LABEL": "Toma anticonceptivos orales"
+			},
+			"CANCER": {
+				"LABEL": "Cancer"
+			},
+			"DIABETES": {
+				"LABEL": "Diabetes"
+			},
+			"HEART": {
+				"LABEL": "Problemsa/Enfermedad del corazon"
+			},
+			"BLOOD": {
+				"LABEL": "Presion arterial alta"
+			},
+			"KIDNEY_LIVER": {
+				"LABEL": "Problemas de los ninones/higado"
+			},
+			"STOMACH": {
+				"LABEL": "Enfermedad estomacal/intestinal"
+			},
+			"BLEEDING": {
+				"LABEL": "Enermedad Arterial"
+			},
+			"PSYCHIATRIC": {
+				"LABEL": "Atencion Psiquiatrica"
+			},
+			"RADIATION": {
+				"LABEL": "Tratamiento con radicion de cabeza"
+			}
+		},
+		"MEDICATIONS": {
+			"LABEL": "Tomando Medicamentos",
+			"MEDICATIONS": {
+				"PLACEHOLDER": "Tomando Medicamentos...",
+				"ERRORS": {
+					"HEADER": "Lista de medicamentos no válido",
+					"MAXLENGTH": "Por favor limite su respuesta a menos de 1.000 caracteres"
+				}
+			}
+		},
+		"ALLERGIES": {
+			"LABEL": "Alergicos",
+			"ASPIRIN": {
+				"LABEL": "Aspirina"
+			},
+			"CODEINE": {
+				"LABEL": "Codenia"
+			},
+			"PENICILLIN": {
+				"LABEL": "Penicilina"
+			},
+			"SULFA": {
+				"LABEL": "Sulfamida"
+			},
+			"OTHER": {
+				"PLACEHOLDER": "Otros...",
+				"ERRORS": {
+					"HEADER": "Lista de alergias no válido",
+					"MAXLENGTH": "Por favor limite su respuesta a menos de 1.000 caracteres"
+				}
+			}
+		}
+	}
+}

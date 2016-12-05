@@ -1,0 +1,215 @@
+<template name="locations">
+	<div class="ui page grid">
+		<div class="four wide column">
+			{{> _locations_menu }}
+		</div>
+		<div class="twelve wide column">
+			{{> _locations_table }}
+		</div>
+	</div>
+</template>
+
+<template name="_locations_table">
+	<table class="ui sortable striped celled table">
+		{{> _locations_table_header }}
+		{{> _locations_table_body }}
+	</table>
+	<!-- <a href="{{pathFor location.new}}" class="ui small right labeled green icon button"> -->
+	{{#if createLocation}}
+		{{> _new_location }}
+	{{else}}
+		<button id="createLocation" class="ui small right labeled green icon button">
+			<i class="plus icon"></i> New Location
+		</button>
+	{{/if}}
+	{{#if loadMoreLocations}}
+		<a href="{{loadMoreLocations}}" class="ui right floated small right labeled green icon button">
+			<i class="down arrow icon"></i> Load More
+		</a>
+	{{else}}
+		{{#unless locationsReady}}
+			<a class="ui loading right floated small right labeled green icon button">
+				<i class="down arrow icon"></i> Load More
+			</a>
+		{{/unless}}
+	{{/if}}
+</template>
+
+<template name="_locations_table_header">
+	<thead>
+		<tr>
+			<th></th>
+			<th id="nameSort" class="{{sortState 'name'}}"> Name</th>
+			<th> Address</th>
+			<th> Contact</th>
+			<th> Usage Counts</th>
+		</tr>
+	</thead>
+</template>
+
+<template name="_locations_table_body">
+	<tbody>
+		{{#if locations}}
+			{{#each locations}}
+				{{> _locations_table_row }}
+			{{/each}}
+		{{else}}
+			{{#if locationsReady}}
+				<tr class="full-width"><td colspan="5">No Results Found</td></tr>
+			{{else}}
+				<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+			{{/if}}
+		{{/if}}
+	</tbody>
+</template>
+
+<template name="_locations_table_row">
+	<tr>
+		<td>
+			<div><a href="{{pathFor route='location.show' locationId=_id}}"><i class="unhide icon"></i>Details</a></div>
+			<!-- <div><a href="{{pathFor route='location.edit' locationId=_id}}"><i class="edit icon"></i>Edit</a></div> -->
+		</td>
+		<td>{{name}}</td>
+		<td>
+			<div>{{address.one}}</div>
+			{{#if address.two}}<div>{{address.two}}</div>{{/if}}
+			<div>{{address.city}}, {{address.state}} {{address.zip}}</div>
+		</td>
+		<td>
+			<div>{{contact.name}}</div>
+			<div>{{contact.number}}</div>
+		</td>
+		<!-- <td><span class="green">{{aggregate.finished}}</span><span class="yellow">{{aggregate.inactive}}</span><span class="red">{{aggregate.timeout}}</span></td> -->
+		<td>
+			<div class="ui small green label">
+				{{getCounts 'finished' _id}}
+				<!--
+				{{#if aggregate.finished}}
+					{{aggregate.finished}}
+				{{else}}
+					0
+				{{/if}}
+				-->
+			</div>
+			<div class="ui small yellow label">
+				{{getCounts 'inactive' _id}}
+				<!--
+				{{#if aggregate.inactive}}
+					{{aggregate.inactive}}
+				{{else}}
+					0
+				{{/if}}
+				-->
+			</div>
+			<div class="ui small red label">
+				{{getCounts 'timeout' _id}}
+				<!--
+				{{#if aggregate.timeout}}
+					{{aggregate.timeout}}
+				{{else}}
+					0
+				{{/if}}
+				-->
+			</div>
+			<div class="ui small blue label">
+				{{getCounts 'inprogress' _id}}
+				<!--
+				{{#if aggregate.inprogress}}
+					{{aggregate.inprogress}}
+				{{else}}
+					0
+				{{/if}}
+				-->
+			</div>
+		</td>
+	</tr>
+</template>
+
+<template name="_locations_table_footer">
+	<tfoot class="full-width">
+		<tr>
+			<th colspan="5">
+				<div class="ui right float small right labeled green icon button">
+					<i class="plus icon"></i> New Location
+				</div>
+			</th>
+		</tr>
+	</tfoot>
+</template>
+
+<template name="_new_location">
+	<div class="ui attached message">
+		New Location
+	</div>
+	<div class="ui attached form segment">
+		{{#if loading}}
+			<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+		{{/if}}
+		{{#autoForm schema="Locations.schema" id="newLocation" type="method" meteormethod="createLocation"}}
+			<div class="ui grid">
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name="name" template="semanticUI"}}
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name='contact.fax' template="semanticUI"}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name='contact.name' template="semanticUI"}}
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name='contact.number' template="semanticUI"}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="sixteen wide column">
+						<div class="field">
+							<label>Address:</label>
+							{{> afQuickField name='address.one' template="semanticUI" }}
+							{{> afQuickField name='address.two' template="semanticUI" }}
+							<div class="ui grid">
+								<div class="eight wide column">
+									{{> afQuickField name='address.city' template="semanticUI" }}
+								</div>
+								<div class="four wide column">
+									{{> afQuickField name='address.state' template="semanticUI" }}
+								</div>
+								<div class="four wide column">
+									{{> afQuickField name='address.zip' template="semanticUI" }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><br/>
+			<button id="finishCreate" type="submit" class="ui small green right floated labeled icon button"><i class="plus icon"></i> Create</button>
+			<button id="cancelCreate" class="ui small green labeled icon button"><i class="minus icon"></i> Cancel</button>
+		{{/autoForm}}
+	</div>
+</template>
+
+<template name="_locations_menu">
+	<div class="ui attached message">
+		<i class="filter icon"></i>
+		Usage Reporting
+	</div>
+	<div class="ui attached form segment">
+		<div class="field">
+			<label>Kiosk Usage for</label>
+			<div class="field">
+				<div class="ui icon input">
+					<input id="date" type="month" placeholder="Month..." />
+					<i class="calendar icon"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="ui attached segment"> -->
+		<p><div class="ui small green label">N</div> Finished Sessions</p>
+		<p><div class="ui small yellow label">N</div> Inactive Sessions</p>
+		<p><div class="ui small red label">N</div> Timed-out Sessions</p>
+		<p><div class="ui small blue label">N</div> In-progress Sessions</p>
+	<!-- </div> -->
+</template>

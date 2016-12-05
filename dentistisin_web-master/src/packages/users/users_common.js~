@@ -1,0 +1,102 @@
+Users = {};
+
+Meteor.users.deny({
+	insert: function() {
+		return true;
+	},
+	update: function() {
+		return true;
+	},
+	remove: function() {
+		return true;
+	}
+});
+
+Meteor.roles.deny({
+	insert: function() {
+		return true;
+	},
+	update: function() {
+		return true;
+	},
+	remove: function() {
+		return true;
+	}
+});
+
+Accounts.config({
+	sendVerificationEmail: true,
+	forbidClientAccountCreation: true,
+	loginExpirationInDays: 0
+});
+
+Users.inviteUserSchema = new SimpleSchema({
+	username: {
+		type: String,
+		label: 'Invitation User Name',
+		regEx: /^[a-z0-9A-Z_]{6,20}$/
+	},
+	email: {
+		type: String,
+		label: 'Invitation Email',
+		regEx: SimpleSchema.RegEx.Email
+	},
+	confirmEmail: {
+		type: String,
+		label: 'Invitation Email (confirm)',
+		custom: function() {
+			if (this.value !== this.field('email').value) {
+				return 'emailMismatch';
+			}
+		}
+	}
+});
+
+Users.setUsernameSchema = new SimpleSchema({
+	username: {
+		type: String,
+		regEx: /^[a-z0-9A-Z_]{6,20}$/,
+		autoform: {
+			label: false,
+			placeholder: 'Username'
+		}
+	}
+});
+
+
+Users._schemaObject = new SimpleSchema({
+	username: {
+		label: 'Username',
+		type: String,
+		regEx: /^[a-z0-9A-Z_]{6,20}$/,
+		autoform: {
+			placeholder: 'Username'
+		}
+	},
+	address: {
+		label: 'Address',
+		type: String,
+		autoform: {
+			placeholder: 'Address'	
+		}
+	},
+	email: {
+		label: 'Email Address',
+		type: String,
+		regEx: SimpleSchema.RegEx.Email,
+		autoform: {
+			placeholder: 'New Email Address'
+		}
+	},
+	phone: {
+		label: 'Phone number',
+		type: String,
+		regEx: /^[0-9]{10,13}$/,
+		autoform: {
+			placeholder: 'Contact Phone number'
+		}
+	}
+	
+});
+
+Users.updateUserSchema = new SimpleSchema(Users._schemaObject);

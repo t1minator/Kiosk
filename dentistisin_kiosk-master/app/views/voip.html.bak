@@ -1,0 +1,29 @@
+<div class="ui centered padded page grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide center aligned column">
+			<!-- <h1 class="ui header">test</h1> -->
+			<div class="ui segment">
+				<!-- <div class="ui active inverted dimmer"><div class="ui loader"></div></div> -->
+				<!-- <iframe src="test.html" class="ka-sc" seamless></iframe> -->
+				<!-- <button ng-click="sendMessage()">Test</button> -->
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="ui dimmer" ng-class="{active: !callInProgress && voipState}">
+					<div class="ui large text loader" ng-show="voipState === 'loadingSightcall'">
+						|Loading...
+					</div>
+					<div class="ui large text loader" ng-show="voipState === 'initializingSightcall'">
+						|Initializing...
+					</div>
+					<div class="ui large indeterminate text loader" ng-show="voipState === 'enqueued'">
+						|Waiting for next available dentist.
+					</div>
+					<div class="ui large indeterminate text loader" ng-show="voipState === 'assigned'">
+						|A dentist has been assigned to you and will be with you shortly.
+					</div>
+				</div>
+				<webview sightcall-webview src="../sightcall/call.html" class="ka-sc" id="sightcall-webview" partition="sightcall" allowtransparency="on"></webview>
+			</div>
+		</div>
+	</div>
+</div>

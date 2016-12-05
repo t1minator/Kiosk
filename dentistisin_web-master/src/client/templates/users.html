@@ -1,0 +1,122 @@
+<template name="users">
+	<div class="ui page grid">
+		<div class="sixteen wide column">
+			{{> _users_table }}
+		</div>
+	</div>
+</template>
+
+<template name="_users_table">
+	<table class="ui sortable striped celled table">
+		{{> _users_table_header }}
+		{{> _users_table_body }}
+	</table>
+	{{#if inviteUser}}
+		{{> _invite_user }}
+		<br/>
+	{{else}}
+		<button id="inviteUser" class="ui small right labeled green icon button">
+			<i class="plus icon"></i> Invite User
+		</button>
+	{{/if}}
+	{{#if loadMoreUsers}}
+		<a href="{{loadMoreUsers}}" class="ui right floated small right labeled green icon button">
+			<i class="down arrow icon"></i> Load More
+		</a>
+	{{else}}
+		{{#unless usersReady}}
+			<a class="ui loading right floated small right labeled green icon button">
+				<i class="down arrow icon"></i> Load More
+			</a>
+		{{/unless}}
+	{{/if}}
+</template>
+
+<template name="_users_table_header">
+	<thead>
+		<tr>
+			<th></th>
+			<th id="usernameSort" class="{{sortState 'username'}}"> Username</th>
+			<th> Email</th>
+			<th> Group</th>
+			<th> Enabled</th>
+			<th></th>
+		</tr>
+	</thead>
+</template>
+
+<template name="_users_table_body">
+	<tbody>
+		{{#if users}}
+			{{#each users}}
+				{{> _users_table_row }}
+			{{/each}}
+		{{else}}
+			{{#if usersReady}}
+				<tr class="full-width"><td colspan="5">No Results Found</td></tr>
+			{{else}}
+				<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+			{{/if}}
+		{{/if}}
+	</tbody>
+</template>
+
+<template name="_users_table_row">
+	<tr>
+		<td>
+			<div><a href="{{pathFor route='user.show' userId=_id}}"><i class="unhide icon"></i>Details</a></div>
+		</td>
+		<td>{{uname}}</td>
+		<td>{{email}}</td>
+		<td>{{group}}</td>
+		<td>{{enabled}}</td>
+		<td>
+			<div><a class="deleteAccount" href=""><i class="unread icon"></i>Delete</a></div>
+		</td>
+	</tr>
+</template>
+
+<template name="_users_table_footer">
+	<tfoot class="full-width">
+		<tr>
+			<th colspan="5">
+				<div class="ui right float small right labeled green icon button">
+					<i class="plus icon"></i> Invite User
+				</div>
+			</th>
+		</tr>
+	</tfoot>
+</template>
+
+<template name="_invite_user">
+	<div class="ui attached message">
+		Invite User
+	</div>
+	<div class="ui attached form segment">
+		{{#if loading}}
+			<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+		{{/if}}
+		{{#autoForm schema="Users.inviteUserSchema" id="inviteUser" type="method" meteormethod="inviteUser"}}
+			<div class="ui grid">
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name="name" template="semanticUI"}}
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name="roles" template="semanticUI"}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name="email" template="semanticUI"}}
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name="confirmEmail" template="semanticUI"}}
+					</div>
+				</div>
+			</div><br/>
+			<button id="finishInvite" type="submit" class="ui small green right floated labeled icon button"><i class="plus icon"></i> Invite</button>
+		{{/autoForm}}
+		<button id="cancelInvite" class="ui small green labeled icon button"><i class="minus icon"></i> Cancel</button>
+	</div>
+</template>

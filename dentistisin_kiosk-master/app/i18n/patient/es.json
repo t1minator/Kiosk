@@ -1,0 +1,195 @@
+{
+	"PATIENT": {
+		"HEADER": {
+			"TITLE": "Información para el paciente",
+			"SUBTEXT": "Todos los campos son obligatorios, salvo que se indique"
+		},
+		"NAME": {
+			"LABEL": "Nombre",
+			"FIRST": {
+				"PLACEHOLDER": "Primer Nombre",
+				"ERRORS": {
+					"HEADER": "Nombre no válido",
+					"REQUIRED": "Su nombre es necesario pero nada era entro en",
+					"MAXLENGTH": "Su nombre está limitado a 100 caracteres"
+				}
+			},
+			"MIDDLE": {
+				"PLACEHOLDER": "Media (opcional)",
+				"ERRORS": {
+					"HEADER": "Nombre no válido",
+					"MAXLENGTH": "Un segundo nombre está limitado a 100 caracteres"
+				}
+			},
+			"LAST": {
+				"PLACEHOLDER": "Ultimo",
+				"ERRORS": {
+					"HEADER": "Apellido no válido",
+					"REQUIRED": "Un apellido es necesario pero nada se ha introducido",
+					"MAXLENGTH": "Un apellido está limitado a 100 caracteres"
+				}
+			},
+			"PREFERRED": {
+				"PLACEHOLDER": "Preferido (opcional)",
+				"ERRORS": {
+					"HEADER": "Nombre preferido no válido",
+					"MAXLENGTH": "El nombre de un preferencia está limitado a 100 caracteres"
+				}
+			}
+		},
+		"ADDRESS": {
+			"LABEL": "Dirección",
+			"ONE": {
+				"PLACEHOLDER": "Dirección linea 1",
+				"ERRORS": {
+					"HEADER": "Línea de dirección no válida",
+					"REQUIRED": "Dirección línea 1 se requiere",
+					"MAXLENGTH": "Dirección línea 1 está limitada a 100 caracteres"
+				}
+			},
+			"TWO": {
+				"PLACEHOLDER": "Dirección linea 2 (Optional)",
+				"ERRORS": {
+					"HEADER": "Línea 2 de dirección no válida",
+					"MAXLENGTH": "Dirección línea 2 está limitada a 100 caracteres"
+				}
+			},
+			"CITY": {
+				"PLACEHOLDER": "Ciudad",
+				"ERRORS": {
+					"HEADER": "Ciudad no válida",
+					"REQUIRED": "Una ciudad es necesaria",
+					"MAXLENGTH": "Una ciudad está limitada a 100 caracteres"
+				}
+			},
+			"STATE": {
+				"PLACEHOLDER": "Estado",
+				"OPTIONS":  {
+					"AL": "Alabama",
+					"AK": "Alaska",
+					"AZ": "Arizona",
+					"AR": "Arkansas",
+					"CA": "California",
+					"CO": "Colorado",
+					"CT": "Connecticut",
+					"DC": "D.C.",
+					"DE": "Delaware",
+					"FL": "Florida",
+					"GA": "Georgia",
+					"HI": "Hawaii",
+					"ID": "Idaho",
+					"IL": "Illinois",
+					"IN": "Indiana",
+					"IA": "Iowa",
+					"KS": "Kansas",
+					"KY": "Kentucky",
+					"LA": "Louisiana",
+					"ME": "Maine",
+					"MD": "Maryland",
+					"MA": "Massachusetts",
+					"MI": "Michigan",
+					"MN": "Minnesota",
+					"MS": "Mississippi",
+					"MO": "Missouri",
+					"MT": "Montana",
+					"NE": "Nebraska",
+					"NV": "Nevada",
+					"NH": "New Hampshire",
+					"NJ": "New Jersey",
+					"NM": "New Mexico",
+					"NY": "New York",
+					"NC": "North Carolina",
+					"ND": "North Dakota",
+					"OH": "Ohio",
+					"OK": "Oklahoma",
+					"OR": "Oregon",
+					"PA": "Pennsylvania",
+					"RI": "Rhode Island",
+					"SC": "South Carolina",
+					"SD": "South Dakota",
+					"TN": "Tennessee",
+					"TX": "Texas",
+					"UT": "Utah",
+					"VT": "Vermont",
+					"VA": "Virginia",
+					"WA": "Washington",
+					"WV": "West Virginia",
+					"WI": "Wisconsin",
+					"WY": "Wyoming"
+				},
+				"ERRORS": {
+					"HEADER": "Estado no válido",
+					"REQUIRED": "Un estado es necesario"
+				}
+			},
+			"ZIP": {
+				"PLACEHOLDER": "Codigo Postal",
+				"ERRORS": {
+					"HEADER": "Codigo postal no valido",
+					"REQUIRED": "Codigo postal es necesario",
+					"PATTERN": "Un código postal sólo puede contener números de la forma NNNNN"
+				}
+			}
+		},
+		"DOB": {
+			"LABEL": "Fecha de nacimiento",
+			"DOB": {
+				"PLACEHOLDER": "MM/DD/YYYY",
+				"ERRORS": {
+					"HEADER": "Fecha no valido",
+					"REQUIRED": "Fecha de nacimiento es necesario",
+					"DATE": "Formato de fecha no válida",
+					"PATTERN": "Formato de fecha no válida"
+				}
+			}
+		},
+		"SEX": {
+			"LABEL": "Género",
+			"SEX": {
+				"PLACEHOLDER": "Género",
+				"OPTIONS": {
+					"M": "Hombre",
+					"F": "Mujer"
+				},
+				"ERRORS": {
+					"HEADER": "Sexo no válido",
+					"REQUIRED": "Debe especificar su sexo"
+				}
+			}
+		},
+		"CONTACT": {
+			"LABEL": "Información de contacto",
+			"EMAIL": {
+				"PLACEHOLDER": "Correo electrónico (opcional)",
+				"ERRORS": {
+					"HEADER": "Dirección de correo electrónico no válida",
+					"EMAIL": "Esto no es una dirección válida de correo electrónico",
+					"MAXLENGTH": "Un correo electrónico debe ser menos de 100 caracteres"
+				}
+			},
+			"PHONE": {
+				"PLACEHOLDER": "Número de teléfono (opcional)",
+				"ERRORS": {
+					"HEADER": "Número de teléfono no válido",
+					"MAXLENGTH": "Un número de teléfono debe ser menos de 25 caracteres",
+					"MINLENGTH": "Please include your area code"
+				}
+			}
+		},
+		"INSURANCE": {
+			"LABEL": "¿Tienes",
+			"INSURANCE": {
+				"PLACEHOLDER": "Método de pago",
+				"OPTIONS": {
+					"Insurance": "Seguro dental",
+					"Medicaid": "Medicaid",
+					"Self": "Pago del uno mismo"
+				},
+				"ERRORS": {
+					"HEADER": "Opción de pago no válida",
+					"REQUIRED": "Debe especificar una opción de pago"
+				}
+			}
+		}
+	}
+}

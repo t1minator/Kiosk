@@ -1,0 +1,127 @@
+<div class="ui basic modal transition" din-inactivity-modal></div>
+<!--<div class="ui three column centered padded page grid">
+	<div class="middle aligned row">
+		<div class="column ka-nfh"></div>
+		<div class="column">-->
+<div class="ui centered padded page grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide column">
+			<div class="ui attached icon message">
+				<i class="icon info"></i>
+				<div class="content">
+					<div class="header" translate>HEADER.TITLE</div>
+					<p translate>HEADER.SUBTEXT</p>
+				</div>
+			</div>
+			<form class="ui form attached fluid segment" name="codeForm" ng-submit="codeSubmit()" novalidate>
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="field">
+					<label translate>CODE.LABEL</label>
+					<din-tooltip-input din-options="code" din-model="authModel.code" din-form="codeForm"></din-tooltip-input>
+				</div>
+				<div class="field">
+					<div class="ui checkbox">
+						<input id="privacyCheckbox" type="checkbox" required ng-model="authModel.privacyAccept" />
+						<label for="privacyCheckbox">{{ 'ACCEPT' | translate }}<a ui-sref="^.privacy" translate>PRIVACY</a></label>
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui checkbox">
+						<input id="consentCheckbox" type="checkbox" required ng-model="authModel.consentAccept" />
+						<label for="consentCheckbox">{{ 'ACCEPT' | translate }}<a ui-sref="^.consent" translate>CONSENT</a></label>
+					</div>
+				</div>
+				<button ng-class="{disabled: !authModel.privacyAccept || !authModel.consentAccept}" class="ui disabled green submit right floated button" translate>COMMON.CONTINUE</button>
+				<button class="ui green submit button" ng-click="langSelect()" translate>COMMON.BACK</button>
+			</form>
+		</div>
+	</div>
+</div>
+<!--
+<div class="ui centered padded page grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide column">
+			<div class="ui attached icon message">
+				<i class="icon info"></i>
+				<div class="content">
+					<div class="header" translate>HEADER.TITLE</div>
+					<p translate>HEADER.SUBTEXT</p>
+				</div>
+			</div>
+			<div id="hipaa" class="ui attached segment">
+				<h2 class="ui center aligned header" translate>HIPAA.DIN</h2>
+				<h1 class="ui center aligned header" translate>HIPAA.NOTICE.TITLE</h1>
+				<div class="ui divider"></div>
+				<h3 class="ui center aligned header" translate>HIPAA.NOTICE.SUBTEXT</h3>
+				<h3 class="ui center aligned header" translate>HIPAA.NOTICE.SUBTEXT_2</h3>
+				<div class="ui divider"></div>
+				<h4 class="ui header" translate>HIPAA.LEGAL_DUTY.TITLE</h4>
+				<div translate>HIPAA.LEGAL_DUTY.SUBTEXT</div>
+				<div class="ui divider"></div>
+				<h4 class="ui header" translate>HIPAA.DISCLOSURE.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.TREATMENT.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.TREATMENT.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.PAYMENT.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.PAYMENT.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.OPERATIONS.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.OPERATIONS.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.AUTHORIZATION.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.AUTHORIZATION.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.FAMILY.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.FAMILY.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.CARE.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.CARE.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.MARKETING.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.MARKETING.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.LAW.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.LAW.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.ABUSE.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.ABUSE.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.SECURITY.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.SECURITY.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.DISCLOSURE.APPOINTMENT.TITLE</h4>
+				<p translate>HIPAA.DISCLOSURE.APPOINTMENT.SUBTEXT</p>
+				<div class="ui divider"></div>
+				<h4 class="ui header" translate>HIPAA.RIGHTS.TITLE</h4>
+				<h4 class="ui left floated header" translate>HIPAA.RIGHTS.ACCESS.TITLE</h4>
+				<p translate>HIPAA.RIGHTS.ACCESS.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.RIGHTS.ACCOUNTING.TITLE</h4>
+				<p translate>HIPAA.RIGHTS.ACCOUNTING.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.RIGHTS.RESTRICTION.TITLE</h4>
+				<p translate>HIPAA.RIGHTS.RESTRICTION.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.RIGHTS.ALTERNATIVE.TITLE</h4>
+				<p translate>HIPAA.RIGHTS.ALTERNATIVE.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.RIGHTS.AMENDMENT.TITLE</h4>
+				<p translate>HIPAA.RIGHTS.AMENDMENT.SUBTEXT</p>
+				<h4 class="ui left floated header" translate>HIPAA.RIGHTS.NOTICE.TITLE</h4>
+				<p translate>HIPAA.RIGHTS.NOTICE.SUBTEXT</p>
+				<div class="ui divider"></div>
+				<h4 class="ui header" translate>HIPAA.QUESTIONS.TITLE</h4>
+				<div translate>HIPAA.QUESTIONS.SUBTEXT</div>
+			</div>
+			<form class="ui form attached fluid segment" name="codeForm" ng-submit="codeSubmit()" novalidate>
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="three fields">
+					<div class="field">
+						<label translate>CODE.LABEL</label>
+						<din-tooltip-input din-options="code" din-model="codeCodeModel" din-form="codeForm"></din-tooltip-input>
+					</div>
+					<div class="field"></div>
+					<div class="field"></div>
+				</div>
+				<div class="field">
+					<div class="ui checkbox">
+						<input id="hipaaCheckbox" type="checkbox" ng-model="hipaaAccept">
+						<label for="hipaaCheckbox">I have read and understand the privacy notice</label>
+					</div>
+				</div>
+				<button ng-class="{disabled: !hipaaAccept}" class="ui green submit right floated button" translate>CONTINUE</button>
+				<button class="ui green submit button" ng-click="langSelect()" translate>BACK</button>
+			</form>
+		</div>
+	</div>
+</div>
+-->

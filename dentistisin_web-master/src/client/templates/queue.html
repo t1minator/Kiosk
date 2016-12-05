@@ -1,0 +1,48 @@
+<template name="queue">
+	<audio id="newPatientBeep" src="1alertklaxon_clean.mp3" preload="auto"></audio>
+	<div class="ui page grid">
+		<div class="sixteen wide column">
+			<div class="ui one column stackable center aligned page grid">
+				<div class="column twelve wide">
+					{{#if error}}
+						<h2 class="ui red header">There was a problem connecting to the kiosk: {{error}}</h2>
+					{{/if}}
+					<div class="ui small statistic">
+						<div class="value">
+							<i class="user icon"></i> {{getPublishedCount 'enPatientQueue'}}
+						</div>
+						<div class="label">
+							English Queue
+						</div>
+					</div>
+					<div class="ui small statistic">
+						<div class="value">
+							<i class="user icon"></i> {{getPublishedCount 'esPatientQueue'}}
+						</div>
+						<div class="label">
+							Spanish Queue
+						</div>
+					</div>
+					<div class="ui small statistic">
+						<div class="value">
+							<i class="doctor icon"></i> {{getPublishedCount 'dentistsOnline'}}
+						</div>
+						<div class="label">
+							Dentists Online
+						</div>
+					</div>
+					<div>
+						<button id="next-en-patient" class="ui tiny green right labeled icon button {{isDisabled 'en'}}">
+							<i class="arrow right icon"></i>
+							Next English Patient
+						</button>
+						<button id="next-es-patient" class="ui tiny green right labeled icon button {{isDisabled 'es'}}">
+							<i class="arrow right icon"></i>
+							Next Spanish Patient
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,46 @@
+{
+	"SURVEY": {
+		"HEADER": {
+			"TITLE": "Survey",
+			"SUBTEXT": "Please give us your feedback"
+		},
+		"WAIT_TIME": {
+			"LABEL": "My waiting time to be seen by a dentist was",
+			"OPTIONS": {
+				"FIVE_MINUTES": "1-5 minutes",
+				"TEN_MINUTES": "5-10 minutes",
+				"FIFTEEN_MINUTES": "10-15 minutes",
+				"TWENTY_MINUTES": "15-20 minutes" 
+			}
+		},
+		"UNDERSTANDING": {
+			"LABEL": "The dentist understood my problem and answered my questions",
+			"OPTIONS": {
+				"T": "True",
+				"F": "False"
+			}
+		},
+		"TREATMENT": {
+			"LABEL": "I will get my treatment done at the recommended facility within",
+			"OPTIONS": {
+				"THREE_DAYS": "1-3 days",
+				"FIVE_DAYS": "3-5 days",
+				"NEVER": "Never"
+			}
+		},
+		"PLEASED": {
+			"LABEL": "I was pleased with my experience with those who helped me today",
+			"OPTIONS": {
+				"T": "True",
+				"F": "False"
+			}
+		},
+		"REFER": {
+			"LABEL": "I would refer my friends here for care",
+			"OPTIONS": {
+				"T": "True",
+				"F": "False"
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"VOIP": {
+		"LOADING": "Carga...",
+		"INITIALIZING": "Inicializando...",
+		"WAITING": "Esperando el siguiente dentista disponible. Por favor recoje el teléfono y estaremos con usted pronto.",
+		"ASSIGNED": "Un dentista le ha sido asignado a usted y estará con usted en breve",
+		"FAILED": "Algo salió mal, al intentar conectar a un nuevo dentista..."
+	}
+}

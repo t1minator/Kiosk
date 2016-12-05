@@ -1,0 +1,26 @@
+<div class="ui centered padded page grid">
+        <div class="middle aligned row">
+                <div class="five wide column ka-nfh"></div>
+                <div class="six wide column">
+			<div class="ui attached icon message"> <!--  ng-class="{hidden: invalidCredentials}"> -->
+				<i class="red warning icon"></i>
+				<div class="content">
+					<div class="header">Error</div>
+					<p>Invalid Credentials</p>
+				</div>
+			</div>
+			<form class="ui form attached fluid segment" name="configForm" ng-submit="configSubmit()" novalidate>
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="field">
+					<label>Key</label>
+					<input type="text" ng-model="configModel.key" ng-required="true"></input>
+				</div>
+				<div class="field">
+					<label>Secret</label>
+					<textarea ng-model="configModel.secret" ng-required="true"></textarea>
+				</div>
+				<button class="ui green submit right floated button" translate>CONTINUE</button>
+			</form>
+		</div>
+	</div>
+</div>

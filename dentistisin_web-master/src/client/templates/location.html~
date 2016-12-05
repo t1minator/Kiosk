@@ -1,0 +1,343 @@
+<template name="location">
+	<div class="ui two column page grid">
+		<div class="equal height row">
+			<div class="nine wide column">
+				{{#if edit}}
+					{{> _edit_location }}
+				{{else}}
+					{{> _location_details }}
+				{{/if}}
+			</div>
+			<div class="seven wide column">
+				{{> _kiosk_details }}
+			</div>
+		</div>
+	</div>
+	<div class="ui page grid">
+		<div class="sixteen wide column">
+			<div class="ui grid">
+				<div class="four wide column">
+				</div>
+				<div class="twelve wide column">
+					{{> _location_statistics }}
+				</div>
+				<div class="four wide column">
+					{{> _location_menu }}
+				</div>
+				<div class="twelve wide column">
+					{{> _location_sessions_table }}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="_location_sessions_table_header">
+	<thead>
+		<tr>
+			<th></th>
+			<th id="createdAtSort" class="{{sortState 'createdAt'}}">Creation Date</th>
+			<th id="dentistSort" class="{{sortState 'dentist.username'}}">Dentist</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+</template>
+
+<template name="_location_sessions_table_body">
+	<tbody>
+		{{#if sessions}}
+			{{#each sessions}}
+				{{> _location_sessions_table_row }}
+			{{/each}}
+		{{else}}
+			{{#if sessionsReady}}
+				<tr class="full-width"><td colspan="4">No Results Found</td></tr>
+			{{else}}
+				<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+			{{/if}}
+		{{/if}}
+	</tbody>
+</template>
+
+<template name="_session_state_finished">
+	<i class="green checkmark icon"></i> Finished
+</template>
+
+<template name="_session_state_inactive">
+	<i class="yellow minus icon"></i> Inactive
+</template>
+
+<template name="_session_state_timeout">
+	<i class="red remove icon"></i> Timed-out
+</template>
+
+<template name="_session_state_inprogress">
+	<i class="blue ellipsis horizontal icon"></i> In-progress
+</template>
+
+<template name="_location_sessions_table_row">
+	<tr>
+		<td><a href="{{pathFor route='session.show' sessionId=_id}}"><i class="unhide icon"></i>Details</a></td>
+		<td>{{date createdAt}}</td>
+		<td><a href="{{pathFor route='user.show' userId=dentist.id}}">{{dentist.username}}</a></td>
+		<td>
+			{{> Template.dynamic template=status }}
+		</td>
+	</tr>
+</template>
+
+<template name="_location_sessions_table">
+	<table class="ui sortable striped celled table">
+		{{> _location_sessions_table_header }}
+		{{> _location_sessions_table_body }}
+	</table>
+	<div>
+	{{#if loadMoreSessions}}
+		<a href="{{loadMoreSessions}}" class="ui right floated small right labeled green icon button">
+			<i class="down arrow icon"></i> Load More
+		</a>
+	{{else}}
+		{{#unless sessionsReady}}
+			<a class="ui loading right floated small right labeled green icon button">
+				<i class="down arrow icon"></i> Load More
+			</a>
+		{{/unless}}
+	{{/if}}
+	</div>
+</template>
+
+<template name="_location_statistics">
+	<div class="ui centered grid">
+		{{#with location}}
+		<div class="four wide column">
+			<div class="ui green statistic">
+				<div class="value">
+					{{getCounts 'finished' _id}}
+					<!--
+					{{#if aggregate.finished}}
+						{{aggregate.finished}}
+					{{else}}
+						0
+					{{/if}}
+					-->
+				</div>
+				<div class="label">
+					Finished Sessions
+				</div>
+			</div>
+		</div>
+		<div class="four wide column">
+			<div class="ui yellow statistic">
+				<div class="value">
+					{{getCounts 'inactive' _id}}
+					<!--
+					{{#if aggregate.inactive}}
+						{{aggregate.inactive}}
+					{{else}}
+						0
+					{{/if}}
+					-->
+				</div>
+				<div class="label">
+					Inactive Sessions
+				</div>
+			</div>
+		</div>
+		<div class="four wide column">
+			<div class="ui red statistic">
+				<div class="value">
+					{{getCounts 'timeout' _id}}
+					<!--
+					{{#if aggregate.timeout}}
+						{{aggregate.timeout}}
+					{{else}}
+						0
+					{{/if}}
+					-->
+				</div>
+				<div class="label">
+					Timed-out Sessions
+				</div>
+			</div>
+		</div>
+		<div class="four wide column">
+			<div class="ui blue statistic">
+				<div class="value">
+					{{getCounts 'inprogress' _id}}
+					<!--
+					{{#if aggregate.inprogress}}
+						{{aggregate.inprogress}}
+					{{else}}
+						0
+					{{/if}}
+					-->
+				</div>
+				<div class="label">
+					In-progress Sessions
+				</div>
+			</div>
+		</div>
+		{{/with}}
+	</div>
+</template>
+
+<template name="_edit_location">
+	<div class="ui attached message">
+		Edit Location
+	</div>
+	<div class="ui attached form segment">
+		{{#if loading}}
+			<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+		{{/if}}
+		{{#autoForm schema="Locations.schema" id="updateLocation" type="method-update" meteormethod="updateLocation" doc=this.location}}
+			<div class="ui grid">
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name='name' template="din"}}
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name='contact.fax' template="din"}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="eight wide column">
+						{{> afQuickField name='contact.name' template="din"}}
+					</div>
+					<div class="eight wide column">
+						{{> afQuickField name='contact.number' template="din"}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="sixteen wide column">
+						<div class="field">
+							<label>Address:</label>
+							{{> afQuickField name='address.one' template="semanticUI" }}
+							{{> afQuickField name='address.two' template="semanticUI" }}
+							<div class="ui grid">
+								<div class="eight wide column">
+									{{> afQuickField name='address.city' template="semanticUI" }}
+								</div>
+								<div class="four wide column">
+									{{> afQuickField name='address.state' template="semanticUI" }}
+								</div>
+								<div class="four wide column">
+									{{> afQuickField name='address.zip' template="semanticUI" }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><br/>
+			<button id="finishEdit" type="submit" class="ui small green labeled icon button"><i class="save icon"></i> Save</button>
+		{{/autoForm}}
+	</div>
+</template>
+
+<template name="_location_details">
+	<div class="ui attached message">
+		Location Details
+	</div>
+	<div class="ui attached form segment">
+		<div class="ui grid">
+			<div class="row">
+				<div class="eight wide column">
+					<div class="field">
+						<label>Name:</label>
+						<p>{{location.name}}</p>
+					</div>
+				</div>
+				<div class="eight wide column">
+					<div class="field">
+						<label>Fax Number:</label>
+						<p>{{location.contact.fax}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="eight wide column">
+					<div class="field">
+						<label>Address:</label>
+						<div>{{location.address.one}}</div>
+						{{#if location.address.two}}
+							<div>{{location.address.two}}</div>
+						{{/if}}
+						<div>{{location.address.city}}, {{location.address.state}} {{location.address.zip}}</div>
+					</div>
+				</div>
+				<div class="eight wide column">
+					<div class="field">
+						<label>Contact Information</label>
+						<div>{{location.contact.name}}</div>
+						<div>{{location.contact.number}}</div>
+					</div>
+				</div>
+			</div>
+		</div><br/>
+		<button id="editLocation" class="ui small green labeled icon button"><i class="edit icon"></i> Edit</button>
+	</div>
+</template>
+
+<template name="_kiosk_details">
+	<div class="ui attached message">
+		{{#if location.kiosk.active}}
+			<div id="kioskEnabled" class="ui green top right attached label"><a>Enabled</a></div>
+		{{else}}
+			<div id="kioskDisabled" class="ui red top right attached label"><a>Disabled</a></div>
+		{{/if}}
+		Kiosk Details
+	</div>
+	<div class="ui attached form segment">
+		{{#if loading}}
+			<div class="ui active inverted dimmer"><div class="ui text loader"></div></div>
+		{{/if}}
+		<div class="field">
+			<label>API Key:</label>
+			<p>{{location.kiosk.apiKey}}</p>
+		</div>
+		<div class="field">
+			<label>Secret Key:</label>
+			<p>{{location.kiosk.secret}}</p>
+		</div>
+		<div class="field">
+			<label>Access Code:</label>
+			<p>{{location.kiosk.code}}</p>
+		</div>
+		<button id="newSecret" class="ui small green button">New Secret</button>
+		<button id="newCode" class="ui small green button">New Code</button>
+	</div>
+</template>
+<template name="_location_menu">
+	<div class="ui attached message">
+		<i class="filter icon"></i>
+		Usage Reporting
+	</div>
+	<div class="ui attached form segment">
+		<div class="field">
+			{{> _dentist_filter }}
+		</div>
+		<!-- <label>Date Range</label> -->
+		<div class="field">
+			<label>Date Range</label>
+			<div class="ui icon input">
+				<input id="dateStart" type="date" placeholder="Start" />
+				<i class="calendar icon"></i>
+			</div>
+		<!-- </div> -->
+		<!-- <div class="field"> -->
+			<div class="ui icon input">
+				<input id="dateEnd" type="date" placeholder="End" />
+				<i class="calendar icon"></i>
+			</div>
+		</div>
+		<!--<div class="field">
+			<label>Kiosk Usage for</label>
+			<div class="field">
+				<div class="ui icon input">
+					<input id="date" type="month" placeholder="Month..." />
+					<i class="calendar icon"></i>
+				</div>
+			</div>
+		</div>-->
+	</div>
+</template>
+

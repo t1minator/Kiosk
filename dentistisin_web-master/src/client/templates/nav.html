@@ -1,0 +1,49 @@
+<template name="nav">
+	<div class="ui green secondary pointing menu navbar page grid">
+		<div class="header item">
+			Dentist Is In
+		</div>
+		{{#if isInRole 'dentist,ma'}}
+			<a class="{{isActiveRoute regex='^queue(.*)|^session(.*)voip$'}} item" href="{{pathFor 'queue.show'}}">
+				<i class="treatment icon"></i>
+				Patient Queue
+			</a>
+		{{/if}}
+		{{#if isInRole 'ma,ta'}}
+			<a class="{{isActiveRoute regex='^location(.*)$'}} item" href="{{pathFor 'locations.show'}}">
+				<i class="building outline icon"></i>
+				Locations
+			</a>
+		{{/if}}
+		{{#if isInRole 'ma,ta'}}
+			<a class="{{isActiveRoute regex='^users'}} item" href="{{pathFor 'users.show'}}">
+				<i class="doctor icon"></i>
+				Users
+			</a>
+		{{/if}}
+		{{#if isInRole 'ma'}}
+			<a class="{{isActiveRoute regex='^(?!.*voip$)session(.*)'}} item" href="{{pathFor 'sessions.show'}}">
+				<i class="folder open outline icon"></i>
+				Sessions
+			</a>
+		{{/if}}
+		<div class="right menu">
+			<div id="nav-profile" class="ui pointing dropdown link item">
+				{{#if userId}}
+				{{ displayName }}
+				<i class="dropdown icon"></i>
+				<div class="ui secondary vertical pointing menu">
+					<a href="{{pathFor route='user.show' userId=userId}}" class="item">
+						<i class="user icon"></i>
+						Profile
+					</a>
+					<a id="signOut" class="item">
+						<i class="sign out icon"></i>
+						Sign Out
+					</a>
+				</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>

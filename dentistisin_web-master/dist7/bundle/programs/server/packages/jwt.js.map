@@ -1,0 +1,1 @@
+{"version":3,"sources":["jwt/jwt.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;AAAA,kC","file":"/packages/jwt.js","sourcesContent":["JWT = Npm.require('jsonwebtoken');\n"]}

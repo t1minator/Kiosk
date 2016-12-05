@@ -1,0 +1,88 @@
+<div class="ui centered padded grid">
+	<div class="middle aligned row">
+		<div class="one wide column ka-nfh"></div>
+		<div class="fourteen wide column">
+			<div class="ui attached icon message">
+				<i class="icon">1</i>
+				<div class="content">
+					<div class="header" translate>PATIENT.HEADER.TITLE</div>
+					<p translate>PATIENT.HEADER.SUBTEXT</p>
+				</div>
+			</div>
+			<fieldset ng-form="patientForm" class="ui attached form segment">
+				<div class="ui inverted dimmer" ng-class="{active: waitingOnRequest}"><div class="ui loader"></div></div>
+				<div class="field">
+					<label translate>PATIENT.NAME.LABEL</label>
+					<div class="four fields">
+						<div class="field">
+							<din-tooltip-input din-options="patient.name.first" din-model="formModel.patientNameFirst" din-form="patientForm"></din-tooltip-input>
+						</div>
+						<div class="field">
+							<din-tooltip-input din-options="patient.name.middle" din-model="formModel.patientNameMiddle" din-form="patientForm"></din-tooltip-input>
+						</div>
+						<div class="field">
+							<din-tooltip-input din-options="patient.name.last" din-model="formModel.patientNameLast" din-form="patientForm"></din-tooltip-input>
+						</div>
+						<div class="field">
+							<din-tooltip-input din-options="patient.name.preferred" din-model="formModel.patientNamePreferred" din-form="patientForm"></din-tooltip-input>
+						</div>
+					</div>
+				</div>
+				<div class="fields">
+					<div class="twelve wide field">
+						<label translate>PATIENT.ADDRESS.LABEL</label>
+						<div class="two fields">
+							<div class="field">
+								<din-tooltip-input din-options="patient.address.one" din-model="formModel.patientAddressOne" din-form="patientForm"></din-tooltip-input>
+							</div>
+							<div class="field">
+								<din-tooltip-input din-options="patient.address.city" din-model="formModel.patientAddressCity" din-form="patientForm"></din-tooltip-input>
+							</div>
+						</div>
+						<div class="fields">
+							<div class="eight wide field">
+								<din-tooltip-input din-options="patient.address.two" din-model="formModel.patientAddressTwo" din-form="patientForm"></din-tooltip-input>
+							</div>
+							<div class="five wide field">
+								<din-tooltip-dropdown din-options="patient.address.state" din-model="formModel.patientAddressState" din-form="patientForm"></din-tooltip-dropdown>
+							</div>
+							<div class="three wide field">
+								<din-tooltip-input din-options="patient.address.zip" din-model="formModel.patientAddressZip" din-form="patientForm"></din-tooltip-input>
+							</div>
+						</div>
+					</div>
+					<div class="four wide field">
+						<label translate>PATIENT.CONTACT.LABEL</label>
+						<div class="field">
+							<din-tooltip-input din-options="patient.contact.email" din-model="formModel.patientContactEmail" din-form="patientForm"></din-tooltip-input>
+						</div>
+						<div class="field">
+							<din-tooltip-input din-options="patient.contact.phone" din-model="formModel.patientContactPhone" din-form="patientForm"></din-tooltip-input>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<div class="fields">
+						<div class="four wide field">
+							<label translate>PATIENT.DOB.LABEL</label>
+							<din-tooltip-input din-options="patient.dob.dob" din-model="formModel.patientDobDob" din-form="patientForm"></din-tooltip-input>
+						</div>
+						<div class="four wide field">
+							<label translate>PATIENT.SEX.LABEL</label>
+							<din-tooltip-dropdown din-options="patient.sex.sex" din-model="formModel.patientSexSex" din-form="patientForm"></din-tooltip-dropdown>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<div class="fields">
+						<div class="four wide field">
+							<label translate>PATIENT.INSURANCE.LABEL</label>
+							<din-tooltip-dropdown din-options="patient.insurance.insurance" din-model="formModel.patientInsuranceInsurance" din-form="patientForm"></din-tooltip-dropdown>
+						</div>
+					</div>
+				</div>
+				<button ng-class="{disabled: patientForm.$submitted && patientForm.$invalid}" class="ui green submit right floated button" ng-click="nextPage()" translate>COMMON.NEXT</button>
+			</fieldset>
+		</div>
+	</div>
+</div>
